@@ -1,12 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { defineConfig } from 'vite'
-import { Analytics } from "@vercel/analytics/react"
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
 
 
 // Bootstrap
@@ -31,6 +24,5 @@ import App from './App.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />   
-    <Analytics />
   </StrictMode>,
 )
