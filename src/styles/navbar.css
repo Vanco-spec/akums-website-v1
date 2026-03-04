@@ -1,0 +1,583 @@
+/* ================= NAVBAR ================= */
+
+/* Base Navbar (fallback or combined with floating) */
+nav.navbar {
+  padding: 20px 0;
+  background-color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Shadow effect when scrolling */
+nav.navbar.scrolled {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Brand Styling */
+nav .navbar-text {
+  color: #fff !important;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  white-space: normal;
+  word-break: keep-all;
+  width: auto;
+}
+
+/* Mobile toggle button styling */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(20%);
+}
+
+/* Placeholder for loading */
+.navbar .placeholder {
+  height: 1.2rem;
+  border-radius: 4px;
+  background-color: #ddd;
+}
+
+/* ===== Floating / Partial-width Navbar ===== */
+.floating-navbar-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 15px; /* distance from top */
+  transform: translateX(-50%);
+  width: clamp(700px, 95%, 2100px); /* partial width that is responsive */
+  z-index: 1050; /* above page content */
+  pointer-events: none; /* wrapper won't block clicks; inner nav resets pointer-events */
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1), opacity 0.25s ease;
+}
+
+/* The visible navbar itself */
+.floating-navbar {
+  pointer-events: auto; /* allow interactions */
+  border-radius: 60px;
+  background:  linear-gradient(90deg,  #1F4FA3 0%, #081F33 100%); /* near-white with slight translucency */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 10px 14px;
+  transition: transform 0.25s ease, opacity 0.25s ease, backdrop-filter 0.25s ease;
+  backdrop-filter: blur(6px); /* subtle glass effect in supporting browsers */
+}
+
+.floating-navbar:hover {
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.25), 0 6px 18px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Brand tweaks - Abbreviated to AKUMS */
+.floating-navbar .navbar-brand .nav-text {
+  font-size: 1.05rem;
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.floating-navbar .navbar-brand .nav-text::before {
+  content: "AKUMS"; /* Abbreviated brand name */
+  display: inline;
+}
+
+/* Link styling - unified and scoped */
+.floating-navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  font-size: 0.8rem;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Underline hover animation */
+.floating-navbar .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: #2F6FD6;
+  transition: width 0.28s ease;
+}
+
+.floating-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.floating-navbar .nav-link:hover {
+  color: #ff9900 !important;
+  border-radius: 8px;
+}
+
+/* Active Link */
+.floating-navbar .nav-link.active {
+  color: #2F6FD6 !important;
+  font-weight: 600;
+}
+
+/* Active Link */
+.floating-navbar .nav-link.active:hover {
+  color: #ff9900!important;
+  font-weight: 600;
+}
+
+.floating-navbar .nav-link.active::after {
+  color: #ff9900 !important;
+  width: 100%;
+}
+
+/* Center links but shift slightly to the left */
+.floating-navbar .navbar-nav {
+  display: flex;
+  justify-content: center;
+  transform: translateX(-20%);
+}
+
+/* Dropdown that visually extends from the floating navbar */
+.floating-navbar .dropdown-menu {
+  font-size: 0.75rem;
+  position: absolute;
+  top: 107%;
+  left: -15%;
+  margin-top: 24px; /* overlap slightly with navbar */
+  border: none;
+  background:  linear-gradient(90deg,  #0e3458  0%, #0a2741 100%);
+  backdrop-filter: blur(6px);
+  border-radius: 0 0 18px 18px; /* rounded bottom only */
+  padding-top: 14px; /* visual offset */
+  transition: opacity 0.25s ease 0.15s, visibility 0.25s ease 0.15s;
+  overflow: visible;
+}
+
+/* Create the “curved notch” illusion */
+.floating-navbar .dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -29px;
+  left: 49%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 35px;
+  background:transparent;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+/* Dropdown items */
+.floating-navbar .dropdown-item {
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 18px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.floating-navbar .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.floating-navbar .dropdown-item:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+  color: #ff9900 ;
+}
+
+/* Remove Bootstrap dropdown caret */
+.floating-navbar .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Lock dropdown position for hover AND click */
+.floating-navbar .dropdown-menu,
+.floating-navbar .dropdown-menu.show {
+  top: 107%;
+  left: -15%;
+  transform: none !important;
+  margin-top: 24px;
+}
+
+/* Auth Links (Login / Sign Up) */
+.floating-navbar .nav-item .nav-link[href*="login"],
+.floating-navbar .nav-item .nav-link[href*="signup"] {
+  background: rgba(0, 123, 255, 0.08);
+  border: 1px solid rgba(0, 123, 255, 0.25);
+  border-radius: 10px;
+  padding: 8px 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.floating-navbar .nav-item .nav-link[href*="login"]:hover,
+.floating-navbar .nav-item .nav-link[href*="signup"]:hover {
+  background: #007bff;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Differentiate Sign Up */
+.floating-navbar .nav-item .nav-link[href*="signup"] {
+  background: rgba(0, 200, 83, 0.1);
+  border-color: rgba(0, 200, 83, 0.3);
+}
+
+.floating-navbar .nav-item .nav-link[href*="signup"]:hover {
+  background: #00c853;
+  box-shadow: 0 4px 10px rgba(0, 200, 83, 0.35);
+}
+
+/* User Links (Dashboard / Logout) */
+.floating-navbar .nav-item .nav-link#dashboard-link {
+  background: rgba(13, 71, 161, 0.08);
+  border: 1px solid rgba(13, 71, 161, 0.25);
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.floating-navbar .nav-item .nav-link#dashboard-link:hover {
+  background: #0d47a1;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(13, 71, 161, 0.35);
+  transform: translateY(-2px);
+}
+
+.floating-navbar .nav-item .nav-link#logout-link {
+  background: rgba(255, 23, 68, 0.1);
+  border: 1px solid rgba(255, 23, 68, 0.25);
+  border-radius: 10px;
+  color: #d50000 !important;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.floating-navbar .nav-item .nav-link#logout-link:hover {
+  background: #ff1744;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(255, 23, 68, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Mobile toggle button styling */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  width: 40px; /* NEW: Reduce width for compactness */
+  height: 32px; /* NEW: Reduce height to match width */
+  padding: 4px; /* Reduce padding slightly for smaller size */
+}
+
+/* Dropdown animations */
+@keyframes dropdownSlideFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.96);
+    box-shadow: none;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.floating-navbar .dropdown-menu.show {
+  animation: dropdownSlideFade 0.4s ease forwards;
+  transform-origin: top center;
+}
+
+/* Desktop dropdown hover */
+@media (min-width: 992px) {
+  
+  .floating-navbar .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .floating-navbar .nav-item.dropdown:hover > .nav-link {
+    color: #007bff !important;
+  }
+
+  .floating-navbar .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+}
+
+/* ================= NAVBAR ================= */
+
+/* ... (rest of your CSS remains unchanged) ... */
+
+/* Responsive Design */
+
+/* Tablets (≤992px) */
+@media (max-width: 992px) {
+  .floating-navbar .navbar-nav {
+    transform: none !important;
+    justify-content: flex-start; /* default alignment for vertical menu */
+  }
+
+  .floating-navbar-wrapper {
+    width: calc(100% - 32px); /* Slightly narrower for more content space */
+    top: 16px; /* Reduced from 20px for less obstruction */
+  }
+
+  .floating-navbar {
+    border-radius: 12px;
+    padding: 8px 12px; /* Reduced padding for compactness */
+  }
+
+  .floating-navbar .navbar-text {
+    font-size: 1rem;
+    max-width: 250px;
+    text-align: center;
+  }
+
+  .floating-navbar .nav-link {
+    margin: 0 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .floating-navbar .dropdown-menu {
+    width: 220px;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+
+  .floating-navbar .dropdown-menu.show {
+    left: -10%;
+    margin-top: 8px;
+  }
+
+  .floating-navbar .dropdown-item {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  .floating-navbar .dropdown-menu::before {
+    width: 70px;
+    height: 30px;
+    top: -20px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+.floating-navbar .nav-link {
+    position: relative; /* needed for ::after */
+    display: inline-block; /* makes width match text */
+    text-align: center; /* centers underline */
+  }
+
+  .floating-navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;           /* start from center */
+    bottom: -4px;        /* distance from text */
+    width: 0;            /* initial width */
+    height: 2px;         /* thickness */
+    background-color: #ff9900; /* match hover color */
+    transform: translateX(-50%); /* center under text */
+    transition: width 0.3s ease;
+  }
+
+  .floating-navbar .nav-link:hover::after,
+  .floating-navbar .nav-link.active::after {
+    width: 40%;          /* shorten line length */
+  }
+}
+
+  .floating-navbar .navbar-nav {
+    transform: none !important;
+    justify-content: flex-start; /* default alignment for vertical menu */
+  }
+
+  .floating-navbar-wrapper {
+    width: calc(100% - 24px); /* Narrower wrapper for more screen space */
+    top: 12px; /* Further reduced top margin */
+  }
+
+  .floating-navbar {
+    border-radius: 10px;
+    padding: 4px 8px; /* Much smaller padding to reduce height */
+  }
+
+  .floating-navbar .navbar-text {
+    display: none; /* Hide to save space */
+  }
+
+  .floating-navbar .navbar-brand::after {
+    content: "AKUMS";
+    color: #fff;
+    font-size: 1.2rem; /* Reduced from 1.7rem for less height */
+    font-weight: 800;
+    letter-spacing: 0.3px; /* Tighter spacing */
+    margin-left: 20px; /* Reduced from 80px to avoid pushing content too far */
+    margin-bottom: 8px; /* Reduced from 12px for compactness */
+  }
+
+  .floating-navbar .nav-item {
+    width: 100%;
+  }
+
+  .floating-navbar .nav-link {
+    margin: 6px 0; /* Reduced margin for tighter spacing */
+    padding: 10px 14px; /* Slightly smaller padding */
+    font-size: 0.95rem; /* Smaller font */
+  }
+
+  .floating-navbar .dropdown-menu {
+    position: static;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+    transition: max-height 0.4s ease-out;
+  }
+
+  .floating-navbar .dropdown-menu.show {
+    margin-top: 0;
+  }
+
+  .floating-navbar .dropdown-item {
+    padding: 14px 18px; /* Reduced padding */
+    font-size: 0.95rem;
+  }
+
+  .floating-navbar .dropdown-menu::before {
+    display: none;
+  }
+
+  /* Disable hover transforms on touch */
+  .floating-navbar .nav-link:hover {
+    transform: none;
+  }
+
+  .floating-navbar .nav-item .nav-link[href*="login"]:hover,
+  .floating-navbar .nav-item .nav-link[href*="signup"]:hover,
+  .floating-navbar .nav-item .nav-link#dashboard-link:hover,
+  .floating-navbar .nav-item .nav-link#logout-link:hover {
+    transform: none;
+  }
+}
+
+/* Small Phones (≤576px) */
+@media (max-width: 576px) {
+  .floating-navbar .navbar-nav {
+    transform: none !important;
+    justify-content: flex-start; /* default alignment for vertical menu */
+  }
+
+  .floating-navbar-wrapper {
+    top: 8px; /* Even closer to top for more content space */
+  }
+
+  .floating-navbar {
+    padding: 3px 6px; /* Minimal padding */
+  }
+
+  .floating-navbar .navbar-brand::after {
+    font-size: 1.1rem; /* Further reduced */
+    margin-left: 15px; /* Tighter */
+    margin-bottom: 6px;
+  }
+
+  .floating-navbar .nav-link {
+    padding: 8px 12px; /* Smaller */
+    font-size: 0.9rem;
+  }
+
+  .floating-navbar .dropdown-item {
+    padding: 12px 16px; /* Smaller */
+    font-size: 0.9rem;
+  }
+}
+
+/* Very Small Phones (≤480px) */
+@media (max-width: 480px) {
+  .floating-navbar .navbar-nav {
+    transform: none !important;
+    justify-content: flex-start; /* default alignment for vertical menu */
+  }
+
+  .floating-navbar {
+    padding: 2px 4px; /* Ultra-minimal */
+  }
+
+  .floating-navbar .navbar-text::after {
+    font-size: 1rem; /* Even smaller */
+    letter-spacing: 0.2px;
+  }
+
+  .floating-navbar .navbar-brand::after {
+    font-size: 1rem; /* Match above */
+    margin-left: 10px; /* Minimal */
+    margin-bottom: 4px;
+  }
+
+  .floating-navbar .nav-link {
+    padding: 6px 10px; /* Compact */
+    font-size: 0.85rem;
+  }
+
+  .floating-navbar .dropdown-item {
+    padding: 10px 14px; /* Compact */
+    font-size: 0.85rem;
+  }
+}
+
+/* Add for ≤360px if needed (very small devices) */
+@media (max-width: 360px) {
+  .floating-navbar-wrapper {
+    width: calc(100% - 16px); /* Maximize space */
+    top: 6px;
+  }
+
+  .floating-navbar {
+    padding: 1px 2px;
+  }
+
+  .floating-navbar .navbar-brand::after {
+    font-size: 0.9rem;
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+
+  .floating-navbar .nav-link {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .floating-navbar .dropdown-item {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ... (rest of your CSS remains unchanged) ... */
+/* Hidden state for scrolling */
+.floating-navbar-wrapper.nav-hidden {
+  transform: translateX(-50%) translateY(-24px);
+  opacity: 0;
+  pointer-events: none;
+}

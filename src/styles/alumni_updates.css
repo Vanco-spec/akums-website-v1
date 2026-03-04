@@ -1,0 +1,28 @@
+.alumni-updates {
+  background-color: #ffffff;
+}
+
+.updates-subtitle {
+  max-width: 700px;
+}
+
+.update-card {
+  padding: 2rem;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+}
+
+.update-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #003366;
+  color: #ffffff;
+}

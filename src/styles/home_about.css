@@ -1,0 +1,379 @@
+/* ====== WHO WE ARE SECTION ====== */
+.who-we-are {
+  min-height: 99vh; /* Responsive below */
+  background: linear-gradient(135deg, #f5b341 0%, #F3E5AB 50%, #D4A14A 100%), 
+              radial-gradient(circle at 20% 80%, rgba(15, 91, 91, 0.1) 0%, transparent 50%), 
+              radial-gradient(circle at 80% 20%, rgba(15, 91, 91, 0.1) 0%, transparent 50%); /* DNA-inspired subtle pattern */
+  background-attachment: fixed; /* Subtle parallax on scroll for desktop */
+  color: #081F33; /* Darker for better contrast */
+  padding: 80px 20px; /* Responsive below */
+  position: relative;
+  overflow: visible; /* Allow elements to breathe */
+}
+
+.who-we-are::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  ); /* Subtle helix-like lines */
+  pointer-events: none;
+}
+
+/* Section Title */
+.section-titles {
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.3rem); /* Responsive below */
+  color: #081F33;
+  margin-top: 60px; /* Responsive below */
+  margin-bottom: 3rem; /* Responsive below */
+  position: relative;
+  text-align: center; /* Responsive below */
+}
+
+.icon-dna {
+  color: #081F33;
+  font-size: 1.0em; /* Responsive below */
+  margin-right: 0.5rem;
+}
+
+/* Lead and Paragraphs */
+.lead {
+  margin-top: 70px;
+  font-size: 0.95rem; /* Responsive below */
+  line-height: 1.6;
+  color: #081F33;
+  text-align: center;
+}
+
+h2 {
+  color: #081F33;
+}
+
+span {
+  color: #081F33;
+}
+
+p {
+  font-size: 0.80rem; /* Responsive below */
+  line-height: 1.6;
+  color: #081F33;
+  margin-bottom: 1.5rem; /* Responsive below */
+  text-align: center;
+}
+
+/* Quote Styling */
+.quote {
+  
+  font-size: 0.85rem; /* Responsive below */
+  color: #1F4FA3;
+  border-left: 5px solid #1F4FA3; /* Responsive below */
+  padding-left: 1.5rem; /* Responsive below */
+  margin: 2.5rem 0; /* Responsive below */
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Image Wrapper */
+.about-img-wrapper {
+  position: relative;
+  border-radius: 15px;
+  max-width: 100%; /* Responsive below */
+  margin: 0 auto; /* Responsive below */
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.about-img {
+  width: 100%;
+  height: 800px;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  filter: brightness(1.05); /* Slight glow */
+}
+
+/* Hover Effects */
+@media (min-width: 768px) {
+  .about-img-wrapper:hover .about-img {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1) saturate(1.2);
+  }
+}
+
+/* CTA Button */
+.btn.fade-item {
+  background: #1F4FA3;
+  color: #fff;
+  width: auto;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  padding: 0.8rem 2rem; /* Responsive below */
+  display: inline-block; /* Responsive below */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 15px rgba(15, 91, 91, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-size: 0.8rem; /* Responsive below */
+}
+
+.btn.fade-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn.fade-item:hover::before {
+  left: 100%;
+}
+
+.btn.fade-item:hover {
+  transform: translateY(-5px) scale(1.05); /* Reduced scale on small screens below */
+  background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
+  box-shadow: 0 10px 25px rgba(15, 91, 91, 0.4);
+}
+
+/* Fade Animations */
+.fade-item {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards; /* Kept intact with delays */
+}
+
+.fade-item.delay-1 { animation-delay: 0.1s; }
+.fade-item.delay-2 { animation-delay: 0.3s; }
+.fade-item.delay-3 { animation-delay: 0.5s; }
+.fade-item.delay-4 { animation-delay: 0.7s; }
+.fade-item.delay-5 { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+/* Large desktops/tablets (1200px and below) */
+@media (max-width: 1200px) {
+  .who-we-are {
+    min-height: 95vh;
+    padding: 70px 18px;
+  }
+  .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.1rem);
+    margin-top: 55px;
+    margin-bottom: 2.8rem;
+  }
+  .icon-dna {
+    font-size: 1.15em;
+  }
+  .lead {
+    font-size: 1.15rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+  .quote {
+    font-size: 1.05rem;
+    padding-left: 1.4rem;
+    margin: 2.3rem 0;
+  }
+  .about-img-wrapper {
+    max-width: 95%;
+  }
+  .btn.fade-item {
+    padding: 0.75rem 1.9rem;
+    font-size: 0.95rem;
+  }
+  .btn.fade-item:hover {
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .who-we-are {
+    min-height: 90vh;
+    padding: 60px 16px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin-top: 50px;
+    margin-bottom: 2.6rem;
+  }
+  .icon-dna {
+    font-size: 1.1em;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 0.98rem;
+    margin-bottom: 1.3rem;
+  }
+  .quote {
+    font-size: 1rem;
+    padding-left: 1.3rem;
+    margin: 2.1rem 0;
+  }
+  .about-img-wrapper {
+    max-width: 90%;
+  }
+  .btn.fade-item {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.92rem;
+  }
+  .btn.fade-item:hover {
+    transform: translateY(-4px) scale(1.03);
+  }
+}
+
+/* Small tablets/phones (768px and below) */
+@media (max-width: 768px) {
+  .who-we-are {
+    padding: 40px 15px;
+    min-height: auto;
+    background-attachment: scroll; /* Disable parallax on mobile for performance */
+  }
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 2.4rem;
+  }
+  .icon-dna {
+    font-size: 1em;
+  }
+  .lead {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  .quote {
+    text-align: center;
+    border-left: none;
+    border-top: 5px solid #1F4FA3;
+    padding-top: 1rem;
+    padding-left: 0;
+    font-size: 1rem;
+    margin: 1.9rem 0;
+  }
+  .btn.fade-item {
+    display: block;
+    margin: 2rem auto 0;
+    text-align: center;
+    width: fit-content;
+    padding: 0.75rem 1.7rem;
+    font-size: 0.9rem;
+  }
+  .about-img-wrapper {
+    margin-bottom: 2rem;
+    max-width: 85%;
+  }
+  .btn.fade-item:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+/* Small phones (576px and below) */
+@media (max-width: 576px) {
+  .who-we-are {
+    padding: 35px 12px;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
+  .icon-dna {
+    font-size: 0.95em;
+  }
+  .lead {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+  }
+  .quote {
+    font-size: 0.9rem;
+    margin: 1.7rem 0;
+  }
+  .about-img-wrapper {
+    max-width: 80%;
+  }
+  .btn.fade-item {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .btn.fade-item:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  .who-we-are {
+    padding: 30px 10px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  .icon-dna {
+    font-size: 0.9em;
+  }
+  .lead {
+    font-size: 0.95rem;
+  }
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .quote {
+    font-size: 0.85rem;
+    margin: 1.5rem 0;
+  }
+  .about-img-wrapper {
+    max-width: 75%;
+  }
+  .btn.fade-item {
+    padding: 0.65rem 1.3rem;
+    font-size: 0.85rem;
+  }
+  .btn.fade-item:hover {
+    transform: none; /* Disable for very small screens */
+  }
+  /* Animation tweak for very small screens: Slightly faster for snappier feel */
+  .fade-item {
+    animation-duration: 0.8s;
+  }
+}

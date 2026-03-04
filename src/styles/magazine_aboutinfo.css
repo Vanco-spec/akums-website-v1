@@ -1,0 +1,309 @@
+/* ===== OVERVIEW SECTION ===== */
+.magazine-overview {
+  padding: 0 5% 6rem 5%;
+  margin-top: -4rem;
+  background: #e2ac75;
+}
+
+.overview-container {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.overview-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #081F33;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.overview-title {
+  font-size: 2.5rem;
+  margin: 1rem 0 1.5rem;
+  font-weight: 700;
+  color: #081F33;
+}
+
+.overview-text {
+  margin-bottom: 1.2rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.overview-btn {
+  margin-top: 1rem;
+  padding: 0.8rem 1.8rem;
+  background: #081F33;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.overview-btn:hover {
+  background: #0c2c47;
+}
+
+.overview-right {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.overview-image {
+  margin-top: 10rem;
+  max-width: 350px;
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.mission-card {
+  background: #e9be94;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  text-align: left;
+}
+
+.mission-card h3 {
+  margin-bottom: 1rem;
+}
+
+.mission-card ul {
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.mission-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== VALUES GRID ===== */
+.values-section {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.values-title {
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.value-box {
+  background: #e9be94;
+  padding: 1.8rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== STRATEGY SECTION ===== */
+.strategy-section {
+  padding: 6rem 5%;
+  text-align: left;
+  background: #e2ac75;
+}
+
+.strategy-header {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.strategy-card {
+  background: #e9be94;
+  padding: 2.5rem;
+  border-radius: 16px;
+  transition: 0.3s ease;
+}
+
+.strategy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+}
+
+.strategy-card h3 {
+  margin-bottom: 1.5rem;
+}
+
+.strategy-card ul {
+  padding-left: 1rem;
+}
+
+.strategy-card li {
+  margin-bottom: 0.7rem;
+}
+
+.magazine-about-section {
+  background: hsl(22, 82%, 83%); /* soft cheerful background */
+  padding: 6rem 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f5b5b;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.magazine-card {
+  min-height: 600px;
+  background: #ffffff;
+  padding: 1.8rem 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.magazine-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.magazine-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 0.8rem;
+}
+
+.magazine-card p {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .magazine-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ===== GROWTH ROADMAP SECTION ===== */
+.growth-roadmap {
+  padding: 6rem 0;
+  background: #c96b6b;
+}
+
+.roadmap-header {
+  max-width: 700px;
+  margin-bottom: 4rem;
+}
+
+.roadmap-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1d144b;
+}
+
+.roadmap-header p {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Horizontal Scroll Track */
+.roadmap-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar (optional clean look) */
+.roadmap-track::-webkit-scrollbar {
+  display: none;
+}
+
+.roadmap-card {
+  min-width: 270px;
+  background: white;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  scroll-snap-align: start;
+  transition: all 0.3s ease;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.roadmap-year {
+  display: inline-block;
+  background: #081F33;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.roadmap-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #081F33;
+}
+
+.roadmap-card ul {
+  padding-left: 1rem;
+}
+
+.roadmap-card li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .goal-number {
+    font-size: 2.5rem;
+  }
+}

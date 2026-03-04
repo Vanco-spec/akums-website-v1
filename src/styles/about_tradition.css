@@ -1,0 +1,307 @@
+/* ====== AKUMS TRADITIONS SECTION ====== */
+.akums-traditions {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top decorative line */
+.akums-traditions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #0a4f4f, #D4A14A, #0a4f4f);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.akums-traditions.is-visible::before {
+  opacity: 1;
+}
+
+/* Section Title */
+.akums-traditions .section-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #003366;
+  position: relative;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.akums-traditions.is-visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.akums-traditions .section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: var(--accent, #D4A14A);
+  margin: 10px auto 0;
+  border-radius: 3px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.6s ease 0.3s;
+}
+
+.akums-traditions.is-visible .section-title::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Intro Text */
+.akums-traditions .lead {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.akums-traditions.is-visible .lead {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tradition Block */
+.tradition-block {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  margin-bottom: 3rem;
+}
+
+.akums-traditions.is-visible .tradition-block {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for each block */
+.akums-traditions.is-visible .tradition-block:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(4) {
+  transition-delay: 0.8s;
+}
+
+/* Image Styling */
+.tradition-image {
+  display: block;
+  margin: 0 auto;
+  height: 360px;
+  width: 100%;
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+}
+
+.akums-traditions.is-visible .tradition-image {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.tradition-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.tradition-title {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.akums-traditions.is-visible .tradition-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tradition-title:hover {
+  color: var(--primary, #0F5B5B) !important;
+  transform: scale(1.02);
+}
+
+/* Text Styling */
+.tradition-text {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.5s ease;
+}
+
+.akums-traditions.is-visible .tradition-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered text animation */
+.akums-traditions.is-visible .tradition-block:nth-child(1) .tradition-text {
+  transition-delay: 0.3s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(2) .tradition-text {
+  transition-delay: 0.5s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(3) .tradition-text {
+  transition-delay: 0.7s;
+}
+
+.akums-traditions.is-visible .tradition-block:nth-child(4) .tradition-text {
+  transition-delay: 0.9s;
+}
+
+.tradition-text strong {
+  color: var(--primary, #0F5B5B);
+  font-weight: 700;
+}
+
+/* Icon styling */
+.tradition-title i {
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.tradition-title:hover i {
+  transform: scale(1.2);
+}
+
+/* Color-coded borders for each tradition */
+.tradition-block:nth-child(1) .tradition-title {
+  border-left: 4px solid #dc3545;
+  padding-left: 15px;
+}
+
+.tradition-block:nth-child(2) .tradition-title {
+  border-left: 4px solid #198754;
+  padding-left: 15px;
+}
+
+.tradition-block:nth-child(3) .tradition-title {
+  border-left: 4px solid #0d6efd;
+  padding-left: 15px;
+}
+
+.tradition-block:nth-child(4) .tradition-title {
+  border-left: 4px solid #0dcaf0;
+  padding-left: 15px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .akums-traditions {
+    padding: 4rem 0;
+  }
+  
+  .akums-traditions .section-title {
+    font-size: 2rem;
+  }
+  
+  .akums-traditions .lead {
+    font-size: 1rem;
+  }
+  
+  .tradition-image {
+    height: 300px;
+  }
+  
+  .tradition-title {
+    font-size: 1.5rem;
+  }
+  
+  .tradition-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .akums-traditions {
+    padding: 3rem 0;
+  }
+  
+  .akums-traditions .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .akums-traditions .lead {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  
+  .tradition-block {
+    text-align: center;
+  }
+  
+  .tradition-image {
+    height: 250px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tradition-title {
+    font-size: 1.3rem;
+  }
+  
+  .tradition-text {
+    font-size: 0.9rem;
+  }
+  
+  .tradition-title i {
+    font-size: 1.1rem;
+  }
+}

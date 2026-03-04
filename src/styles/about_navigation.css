@@ -1,0 +1,136 @@
+/* ====== ABOUT NAVIGATION SECTION ====== */
+.about-navigation {
+  background: #fff;
+  margin-top: 0px;
+  margin-bottom: 70px;
+}
+
+.about-navigation .section-title {
+  color: #003366;
+  font-weight: 700;
+  padding-bottom: 50px;
+}
+
+.about-navigation .nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFF8E7, #F5E8C7);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: var(--primary, #0F5B5B);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  height: 90%;
+}
+
+.about-navigation .nav-card i {
+  font-size: 2rem;
+  color: #8C6E2F; /* gold accent */
+  margin-bottom: 0.6rem;
+  transition: transform 0.3s ease;
+}
+
+.about-navigation .nav-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #8C6E2F;
+}
+
+.about-navigation .nav-card:hover i {
+  transform: scale(1.1);
+}
+
+.about-navigation .nav-card h5 {
+  color: #003366;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Style for coming soon card */
+.nav-card.coming-soon {
+  cursor: not-allowed;
+  opacity: 0.7;
+  position: relative;
+}
+
+.nav-card.coming-soon:hover {
+  transform: none; /* disables hover effect */
+}
+
+.nav-card.coming-soon .coming-text {
+  display: block;
+  font-size: 0.85rem;
+  color: #ff5722; /* subtle accent color for visibility */
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+/* Tablet Responsiveness (768px to 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .about-navigation {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+  .about-navigation .section-title {
+    font-size: 1.8rem; /* Slightly smaller title */
+    padding-bottom: 30px;
+  }
+  .about-navigation .nav-card {
+    padding: 1.2rem; /* Reduced padding for balance */
+  }
+  .about-navigation .nav-card i {
+    font-size: 1.8rem; /* Smaller icons */
+    margin-bottom: 0.5rem;
+  }
+  .about-navigation .nav-card h5 {
+    font-size: 1rem; /* Smaller text */
+  }
+}
+
+/* Mobile Responsiveness (up to 768px) */
+@media (max-width: 768px) {
+  .about-navigation {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+  .about-navigation .section-title {
+    font-size: 1.5rem; /* Much smaller title for mobile */
+    padding-bottom: 20px;
+  }
+  .about-navigation .nav-card {
+    padding: 1rem; /* Tighter padding */
+    border-radius: 0.8rem; /* Slightly smaller radius */
+  }
+  .about-navigation .nav-card i {
+    font-size: 1.5rem; /* Smaller icons for mobile */
+    margin-bottom: 0.4rem;
+  }
+  .about-navigation .nav-card h5 {
+    font-size: 0.95rem; /* Smaller text */
+  }
+}
+
+/* ====== FADE-UP ANIMATION ====== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional stagger delay effect */
+.fade-up:nth-child(1) { transition-delay: 0.1s; }
+.fade-up:nth-child(2) { transition-delay: 0.2s; }
+.fade-up:nth-child(3) { transition-delay: 0.3s; }
+.fade-up:nth-child(4) { transition-delay: 0.4s; }
+.fade-up:nth-child(5) { transition-delay: 0.5s; }
+.fade-up:nth-child(6) { transition-delay: 0.6s; }
+.fade-up:nth-child(7) { transition-delay: 0.7s; }

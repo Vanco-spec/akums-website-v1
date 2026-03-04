@@ -1,0 +1,229 @@
+/* ====== COMING SOON SECTION ====== */
+.coming-soon-section {
+  height: 90%;
+  margin-top: -4rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #e0f2ff 50%, #f8fbff 100%), 
+              ;
+  background-attachment: fixed; /* Subtle parallax */
+  color: #0d3b66;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-soon-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(77,168,255,0.1)"/></svg>') repeat;
+  animation: eagernessParticles 25s linear infinite; /* Subtle floating particles for eagerness */
+  pointer-events: none;
+}
+
+@keyframes eagernessParticles {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+.coming-soon-section .section-title {
+  color: #000000;
+  font-weight: 700;
+  font-size: 2rem;
+  position: relative;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+  /* Centering */
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.coming-soon-section .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4da8ff, #007bff);
+  margin: 40px auto;
+  border-radius: 2px;
+}
+
+.coming-soon-section .lead {
+  color: #000000;
+  font-size: 0.85rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Coming Card */
+.coming-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px); /* Glassmorphism effect */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 100, 200, 0.1);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.coming-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(77, 168, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+.coming-card:hover::before {
+  opacity: 1;
+}
+
+.coming-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 100, 200, 0.2);
+}
+
+/* Eagerness Badge */
+.eagerness-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #4da8ff, #007bff);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(77, 168, 255, 0.3);
+  animation: badgePulse 2s infinite; /* Pulsing for eagerness */
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes pulseBadge {
+  0% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.6); }
+  70% { box-shadow: 0 0 0 10px rgba(13, 110, 253, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(13, 110, 253, 0); }
+}
+
+/* Icon */
+.icon {
+  font-size: 2.5rem;
+  color: #003366;
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+  animation: iconPulse 3s infinite; /* Subtle pulse for eagerness */
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.coming-card:hover .icon {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Headings and Text */
+.coming-card h5 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #000000;
+}
+
+.coming-card p {
+  color: #000000;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Fade-up Animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coming-soon-section {
+    margin-top: 80px;
+    background-attachment: scroll; /* Disable parallax for mobile */
+  }
+
+  .coming-soon-section .section-title {
+    font-size: 2rem;
+  }
+
+  .coming-soon-section .lead {
+    font-size: 1rem;
+  }
+
+  .coming-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .coming-card h5 {
+    font-size: 1.1rem;
+  }
+
+  .coming-card p {
+    font-size: 0.9rem;
+  }
+
+  .eagerness-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-section .section-title {
+    font-size: 1.8rem;
+  }
+
+  .coming-card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .progress-bar {
+    height: 6px;
+  }
+
+  .progress-text {
+    font-size: 0.75rem;
+  }
+}

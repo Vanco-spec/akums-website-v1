@@ -1,0 +1,159 @@
+
+/* ===== FOOTER SECTION ===== */
+.footer-section {
+background: linear-gradient(
+    90deg,
+    #081F33 0%,
+    #0F3A5F 60%,
+    #1F4FA3 100%
+  );
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+  background-blend-mode: overlay;
+  color: #ffffff; /* pure white */
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* Removed fixed height to allow dynamic sizing on small screens */
+}
+
+.footer-title {
+  padding-top: 0px;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: linear-gradient(90deg, #0F5B5B, #007bff); /* bright warm yellow */
+}
+
+.footer-p {
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem; /* increases spacing between contact lines */
+}
+
+.footer-links li {
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+  color: #ffffff; /* pure white */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff9900; /* change to your desired color */
+  transform: translateX(4px) scale(1.1); /* increases size by 10% */
+  transition: transform 0.3s ease, color 0.3s ease; /* smooth animation */
+}
+
+.social-icons a {
+  color: #cfd8dc;
+  font-size: 1.0rem;
+  margin-right: 0.7rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons {
+  margin-top: 1rem; /* adds space above social icons */
+}
+
+.social-icons a {
+  color: #cfd8dc;
+  font-size: 1.0rem;
+  margin-right: 0.7rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects with real brand colors */
+.social-icons a:hover {
+  transform: translateY(-4px) scale(1.1);
+}
+
+.social-icons a[href*="instagram"]:hover {
+  color: #E1306C;
+}
+
+.social-icons a[href*="tiktok"]:hover {
+  color: #000;
+}
+
+.social-icons a[href*="x.com"]:hover {
+  color: #1DA1F2;
+}
+
+.social-icons a[href*="linkedin"]:hover {
+  color: #0077B5;
+}
+
+.social-icons a[href*="linktr.ee"]:hover {
+  color: #FF5A5F; /* Linktree brand color */
+}
+
+.social-icons a[href^="mailto:"]:hover {
+  color: #D44638; /* Gmail red */
+}
+
+
+hr {
+  margin-top: 1.0rem;
+  opacity: 0.2;
+}
+
+/* Fade + Zoom Animation */
+.fade-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-zoom.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+    padding-top: 30px; /* Reduced top padding for better fit */
+    padding-bottom: 30px; /* Reduced bottom padding for better fit */
+  }
+
+  .footer-title {
+    padding-top: 20px; /* Reduced top padding to prevent excessive spacing */
+    font-size: 1rem; /* Slightly smaller font for small screens */
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+    justify-content: center; /* Center social icons */
+    display: flex; /* Ensure flex for centering */
+  }
+
+  .footer-p {
+    font-size: 0.9rem; /* Slightly smaller text for better readability */
+  }
+
+  .footer-links li {
+    margin-bottom: 0.3rem; /* Tighter spacing */
+  }
+}
+
+/* Additional small screen adjustments for very small devices */
+@media (max-width: 576px) {
+  .footer-section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .footer-title {
+    padding-top: 10px;
+    font-size: 0.95rem;
+  }
+
+  .social-icons a {
+    font-size: 1.1rem; /* Slightly smaller icons */
+    margin-right: 0.5rem;
+  }
+}

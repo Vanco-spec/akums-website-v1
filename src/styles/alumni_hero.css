@@ -1,0 +1,241 @@
+/* ====== THEME COLORS ====== */
+:root {
+  --akums-light-blue: #d9ecf2;
+  --akums-blue: #007b9e;
+  --akums-deep-blue: #004b64;
+  --akums-gold: #d4a14a;
+}
+
+/* ===== ALUMNI HERO ===== */
+.alumni-hero {
+  background: linear-gradient(135deg, #1e40af, #1d4ed8, #0f172a);
+  padding: 10rem 1rem 12rem; /* ↑ top | sides | bottom */
+  min-height: 90vh; /* Modern touch: Ensure full viewport height for better visual impact */
+  display: flex;
+  align-items: center; /* Center content vertically */
+}
+
+.alumni-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.alumni-content {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto; /* Center horizontally */
+}
+
+.alumni-icon i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: floatIcon 4s ease-in-out infinite;
+  color: var(--akums-gold); /* Modern touch: Use theme color for accent */
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.alumni-subtitle {
+  max-width: 700px;
+  margin: 1rem auto 2rem;
+  opacity: 0.9;
+  font-weight: 400px;
+  font-size: 1.0rem; /* Slightly larger for readability */
+  line-height: 1.6; /* Better line height for modern look */
+}
+
+.alumni-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+
+.alumni-stats {
+  padding-top: 1px;
+  margin-top: 8rem;
+
+}
+
+.stat-card {
+  background: transparent;
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 0rem 1.8rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Modern touch: Add shadow transition */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+}
+
+.stat-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--akums-gold); /* Theme color for icons */
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+  font-weight: 700; /* Bolder for emphasis */
+}
+
+.stat-card p {
+  opacity: 0.9;
+  margin: 0;
+  font-size: 0.95rem; /* Slightly smaller for balance */
+}
+
+/* Wave */
+.alumni-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+
+.alumni-wave svg {
+  width: 100%;
+  height: 120px;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: slideUp 0.9s ease forwards;
+}
+.animate-up.delay-1 {
+  animation-delay: 0.3s;
+}
+.animate-up.delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .alumni-hero {
+    padding: 6rem 1rem 6rem; /* Reduce padding for mobile */
+    min-height: auto; /* Allow natural height on small screens */
+  }
+
+  .alumni-icon i {
+    font-size: 3rem; /* Smaller icon */
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Smaller heading */
+    line-height: 1.3; /* Tighter line height */
+  }
+
+  .alumni-subtitle {
+    font-size: 1rem; /* Smaller subtitle */
+    max-width: 100%; /* Full width on mobile */
+    margin: 1rem 0 2rem; /* Adjust margins */
+  }
+
+  .alumni-actions {
+    gap: 2rem; /* Smaller gap */
+  }
+
+  .alumni-stats {
+    margin-top: 4rem; /* Reduce top margin */
+  }
+
+  .stat-card {
+    padding: 1.5rem 1.2rem; /* Smaller padding */
+    margin-bottom: 1rem; /* Reduce bottom margin */
+  }
+
+  .stat-card i {
+    font-size: 1.5rem; /* Smaller icon */
+  }
+
+  .stat-card h3 {
+    font-size: 1.5rem; /* Smaller stat number */
+  }
+
+  .stat-card p {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .alumni-wave svg {
+    height: 80px; /* Smaller wave height */
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-hero {
+    padding: 7rem 1rem 4rem; /* Even smaller padding for very small screens */
+  }
+
+  .alumni-icon i {
+    font-size: 2.5rem; /* Even smaller icon */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .alumni-subtitle {
+    font-size: 0.95rem; /* Smaller subtitle */
+  }
+
+  .alumni-actions {
+    gap: 1rem; /* Tighter gap */
+    flex-direction: column; /* Stack vertically if needed */
+  }
+
+  .stat-card {
+    padding: 1.2rem 1rem; /* Smaller padding */
+  }
+
+  .stat-card h3 {
+    font-size: 1.3rem; /* Smaller stat number */
+  }
+
+  .alumni-wave svg {
+    height: 60px; /* Smaller wave */
+  }
+}

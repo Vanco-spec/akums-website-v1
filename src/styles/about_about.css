@@ -1,0 +1,151 @@
+/* ====== WHO WE ARE SECTION ====== */
+.who-we-are {  
+  background-color: var(--bg, #fff);
+  padding: 0 0 4rem;
+  margin-top: 0rem;
+  font-size: 1.1rem;
+  color: var(--muted, #444);
+  overflow: hidden; /* Keeps animations contained */
+}
+
+.who-we-are .section-title { 
+  color: #003366;
+  padding-top: 0px;
+  font-size: 2.0rem;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  opacity: 0; /* Hidden initially for animation */
+  transform: translateY(-20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.who-we-are .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--accent, #D4A14A);
+  margin-top: 8px;
+  border-radius: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.8s ease 0.2s; /* Delay slightly behind text */
+}
+
+.who-we-are p {
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.who-we-are strong {
+  color: #003366;
+  font-weight: 700;
+}
+
+/* Image Styling with Premium Shadow */
+.who-we-are .who-image {
+  margin-top: 120px;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* Initial state for animation */
+  opacity: 0;
+  transform: scale(0.95) translateY(20px);
+}
+
+.who-we-are .who-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+/* Affiliations Styling */
+.affiliations {
+  margin-top: 1.2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.4s; /* Delayed entrance */
+}
+
+.affiliate-logo {
+  width: 100px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%); /* Start grayscale for premium look */
+  opacity: 0.7;
+}
+
+.affiliate-logo:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Button Styling */
+.who-we-are .btn {
+  background: var(--primary, #0F5B5B);
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(15, 91, 91, 0.2);
+}
+
+.who-we-are .btn:hover {
+  background: var(--accent, #D4A14A);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(212, 161, 74, 0.3);
+}
+
+/* ====== ANIMATION UTILITIES ====== */
+
+/* This class is added by JS when the section is in view */
+.who-we-are.is-visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.who-we-are.is-visible .section-title::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.who-we-are.is-visible p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.who-we-are.is-visible .who-image {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.who-we-are.is-visible .affiliations {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for paragraphs */
+.who-we-are.is-visible p:nth-child(1) { transition-delay: 0.2s; }
+.who-we-are.is-visible p:nth-child(2) { transition-delay: 0.4s; }
+.who-we-are.is-visible p:nth-child(3) { transition-delay: 0.6s; }
+.who-we-are.is-visible p:nth-child(4) { transition-delay: 0.8s; }
+
+/* ====== AKUMS TRADITIONS SECTION ====== */
+/* (Keeping your existing styles, just ensuring they are clean) */
+.akums-traditions {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f9f9 50%, #e6f2f2 100%);
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ... (Rest of your existing Akums Traditions CSS remains the same) ... */

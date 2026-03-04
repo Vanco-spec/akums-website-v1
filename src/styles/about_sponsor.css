@@ -1,0 +1,499 @@
+/* ================= SPONSORS / PARTNERS ================= */
+#sponsors {
+  background: url('../images/pexels-karola-g-4386467.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  color: #fff;
+  padding: 100px 20px;
+  min-height: 95vh;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Animated background overlay */
+#sponsors::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(8, 31, 51, 0.85) 0%, rgba(10, 79, 79, 0.75) 100%);
+  z-index: 0;
+}
+
+/* Particle drift animation */
+#sponsors::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+  animation: driftParticles 25s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes driftParticles {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-50px) translateX(20px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+/* Central spotlight effect */
+#sponsors .spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(212, 161, 74, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: spotlightPulse 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes spotlightPulse {
+  0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* Section title with entrance animation */
+#sponsors .section-title {
+  padding-top: 10px;
+  font-size: clamp(1.8rem, 4vw, 2.0rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 5rem;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
+}
+
+#sponsors.is-visible .section-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#sponsors .section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #D4A14A, #F3E5AB);
+  margin: 3rem auto;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(212, 161, 74, 0.5);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: all 0.6s ease 0.3s;
+}
+
+#sponsors.is-visible .section-title::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Sponsors Hall Container */
+.sponsors-hall {
+  position: relative;
+  z-index: 2;
+}
+
+/* Sponsors Row */
+#sponsors .row {
+  padding-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Sponsor Frame with entrance animation */
+.sponsor-frame {
+  background: linear-gradient(45deg, #D4A14A, #F3E5AB, #D4A14A);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  height: 115px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+}
+
+/* Staggered entrance delays */
+#sponsors.is-visible .sponsor-frame:nth-child(1) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+#sponsors.is-visible .sponsor-frame:nth-child(2) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+#sponsors.is-visible .sponsor-frame:nth-child(3) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+#sponsors.is-visible .sponsor-frame:nth-child(4) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.4s;
+}
+
+#sponsors.is-visible .sponsor-frame:nth-child(5) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+#sponsors.is-visible .sponsor-frame:nth-child(6) {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Frame hover effect */
+.sponsor-frame:hover {
+  transform: translateY(-15px) rotateY(5deg);
+  box-shadow: 0 20px 50px rgba(212, 161, 74, 0.4);
+}
+
+/* Frame Inner */
+.frame-inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+/* Frame Glow */
+.frame-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(212, 161, 74, 0.3) 0%, transparent 70%);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.sponsor-frame:hover .frame-glow {
+  opacity: 1;
+}
+
+/* Sponsor Logos */
+.sponsor-logo {
+  height: 100px;
+  width: 140px;
+  object-fit: contain;
+  transition: all 0.4s ease;
+  border-radius: 8px;
+  filter: brightness(0.9);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.sponsor-logo:hover, .sponsor-logo:focus {
+  transform: scale(1.15);
+  filter: brightness(1.2) drop-shadow(0 0 20px rgba(212, 161, 74, 0.8));
+  cursor: pointer;
+}
+
+/* Sponsor Name */
+.sponsor-frame p {
+  color: #fff;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.sponsor-frame:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade Hall Animation */
+.fade-hall {
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-hall.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Sponsor Placeholder Skeleton */
+.sponsor-placeholder {
+  background: linear-gradient(90deg, #444 25%, #555 50%, #444 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+  height: 80px;
+  width: 120px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ================== Responsive Design ================== */
+/* Large desktops/tablets (1200px and below) */
+@media (max-width: 1200px) {
+  #sponsors {
+    padding: 90px 18px;
+    min-height: 90vh;
+  }
+  #sponsors .section-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.1rem);
+    margin-bottom: 4.5rem;
+  }
+  #sponsors .section-title::after {
+    width: 70px;
+    margin: 2.8rem auto;
+  }
+  #sponsors .row {
+    padding-bottom: 70px;
+    gap: 3.5rem;
+  }
+  .sponsor-frame {
+    padding: 1.8rem;
+    width: 170px;
+    height: 130px;
+  }
+  .sponsor-logo {
+    height: 90px;
+    width: 130px;
+  }
+  .sponsor-placeholder {
+    height: 75px;
+    width: 110px;
+  }
+  .sponsor-frame:hover {
+    transform: translateY(-12px) rotateY(4deg);
+  }
+  .sponsor-logo:hover {
+    transform: scale(1.08);
+  }
+}
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  #sponsors {
+    padding: 80px 15px;
+    min-height: 70vh;
+  }
+  #sponsors .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  #sponsors .section-title::after {
+    width: 65px;
+    margin: 2.5rem auto;
+  }
+  #sponsors .row {
+    padding-bottom: 60px;
+    gap: 3rem;
+  }
+  .sponsor-frame {
+    padding: 1.5rem;
+    width: 180px;
+    height: 140px;
+  }
+  .sponsor-logo {
+    height: 70px;
+    width: 100px;
+  }
+  .sponsor-placeholder {
+    height: 70px;
+    width: 100px;
+  }
+  .sponsor-frame:hover {
+    transform: translateY(-10px) rotateY(3deg);
+  }
+  .sponsor-logo:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Small tablets/phones (768px and below) */
+@media (max-width: 768px) {
+  #sponsors {
+    padding: 60px 10px;
+    min-height: auto;
+    background-attachment: scroll; /* Disable parallax for performance */
+  }
+  #sponsors::after {
+    width: 200px;
+    height: 200px;
+  }
+  #sponsors .section-title {
+    padding-top: 15px;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  #sponsors .section-title::after {
+    width: 55px;
+    margin: 2rem auto;
+  }
+  #sponsors .row {
+    padding-bottom: 50px;
+    gap: 2rem;
+  }
+  .sponsor-frame {
+    padding: 1.2rem;
+    width: 160px; /* Smaller for mobile */
+    height: 120px;
+  }
+  .sponsor-logo {
+    height: 60px; /* Scaled down uniformly */
+    width: 90px;
+  }
+  .sponsor-placeholder {
+    height: 60px;
+    width: 90px;
+  }
+  .fade-hall {
+    transform: translateY(30px) scale(0.9);
+  }
+  .sponsor-frame:hover {
+    transform: translateY(-8px) rotateY(2deg);
+  }
+  .sponsor-logo:hover {
+    transform: scale(1.03);
+  }
+}
+
+/* Small phones (576px and below) */
+@media (max-width: 576px) {
+  #sponsors {
+    padding: 50px 8px;
+  }
+  #sponsors::after {
+    width: 180px;
+    height: 180px;
+  }
+  #sponsors .section-title {
+    padding-top: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  #sponsors .section-title::after {
+    width: 45px;
+    margin: 1.8rem auto;
+  }
+  #sponsors .row {
+    padding-bottom: 40px;
+    gap: 1.5rem;
+  }
+  .sponsor-frame {
+    padding: 1rem;
+    width: 140px; /* Even smaller for small phones */
+    height: 100px;
+  }
+  .sponsor-logo {
+    height: 50px; /* Scaled down uniformly */
+    width: 80px;
+  }
+  .sponsor-placeholder {
+    height: 50px;
+    width: 80px;
+  }
+  .sponsor-frame:hover {
+    transform: translateY(-5px) rotateY(1deg);
+  }
+  .sponsor-logo:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  #sponsors {
+    padding: 40px 5px;
+  }
+  #sponsors::after {
+    width: 150px;
+    height: 150px;
+  }
+  #sponsors .section-title {
+    padding-top: 5px;
+    font-size: 1.6rem;
+    margin-bottom: 1.8rem;
+  }
+  #sponsors .section-title::after {
+    width: 40px;
+    margin: 1.5rem auto;
+  }
+  #sponsors .row {
+    padding-bottom: 30px;
+    gap: 1rem;
+  }
+  .sponsor-frame {
+    padding: 0.8rem;
+    width: 120px;
+    height: 80px;
+  }
+  .sponsor-logo {
+    height: 40px;
+    width: 70px;
+  }
+  .sponsor-placeholder {
+    height: 40px;
+    width: 70px;
+  }
+  .sponsor-frame:hover {
+    transform: translateY(-3px) rotateY(0deg); /* Minimal for very small screens */
+  }
+  .sponsor-logo:hover {
+    transform: scale(1.01);
+  }
+  /* Animation tweak for very small screens: Slightly reduced intensity for performance */
+  @keyframes driftParticles {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-30px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+  }
+  @keyframes spotlightPulse {
+    0%, 100% { opacity: 0.2; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 0.4; transform: translate(-50%, -50%) scale(1.05); }
+  }
+}

@@ -1,0 +1,205 @@
+/* Reset unnecessary body spacing */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== LEADERS SECTION ===== */
+#leaders-section {
+  background: #fff; 
+  color: #333;
+  padding-top: 600px; /* No large gap above section */
+  padding-bottom: 50px;
+  min-height: 100vh;
+}
+
+
+
+/* Section title and description */
+#leaders-section .section-title {
+  font-weight: 700;
+  font-size: 2rem;
+  padding-top: 45px;
+}
+
+
+
+#leaders-section .lead {
+  font-weight: 400;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #4b5563;
+}
+
+/* ===== ACCORDION ===== */
+.accordion-button {
+  background-color: #f8f9fa;
+  color: #081f33;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e9f1f7;
+  color: #081f33;
+}
+
+.accordion-button:hover {
+  background-color: #e0ebf5;
+}
+
+/* Card container */
+.leader-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(15,91,91,0.06);
+  padding: 1.25rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.32s ease, box-shadow 0.32s ease;
+}
+
+.leader-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(10,15,20,0.08);
+}
+
+/* Photo */
+.leader-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #0F5B5B;
+  margin-bottom: 0.6rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.leader-card:hover .leader-photo {
+  transform: scale(1.04);
+}
+
+/* Name / role / function */
+.leader-card h5, .leader-card h6 {
+  color: #0F5B5B;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.leader-function {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+  max-width: 18rem;
+  text-align: center;
+}
+
+/* Contact row */
+.leader-contact {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Email & LinkedIn buttons */
+.contact-email,
+.contact-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f3f7f7;
+  color: #0F5B5B;
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: all 0.22s ease;
+  border: 1px solid rgba(15,91,91,0.06);
+}
+
+.contact-email:hover {
+  background: linear-gradient(90deg,#0F5B5B,#0A4A4A);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(10,15,20,0.08);
+}
+
+.contact-linkedin:hover {
+  background: linear-gradient(90deg,#0A66C2,#084C8A);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(10,15,20,0.08);
+}
+
+.team-vision {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0.5rem auto;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  #leaders-section { padding-top: 50px; padding-bottom: 40px; }
+  .leader-card { padding: 1rem; }
+  .leader-photo { width: 100px; height: 100px; }
+  .leader-function { font-size: 0.9rem; max-width: 16rem; }
+  .contact-email, .contact-linkedin { width: 38px; height: 38px; font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  #leaders-section { padding-top: 40px; padding-bottom: 30px; }
+  .leader-card { padding: 0.75rem; }
+  .leader-photo { width: 96px; height: 96px; }
+  .leader-function { max-width: 14rem; font-size: 0.94rem; }
+  .contact-email, .contact-linkedin { width: 36px; height: 36px; font-size: 0.95rem; }
+}
+
+@media (max-width: 576px) {
+  #leaders-section { padding-top: 30px; padding-bottom: 20px; }
+  .leader-card { padding: 0.5rem; }
+  .leader-photo { width: 80px; height: 80px; margin-bottom: 0.4rem; }
+  .leader-function { font-size: 0.85rem; max-width: 12rem; margin-bottom: 0.4rem; }
+  .leader-contact { gap: 0.4rem; }
+  .contact-email, .contact-linkedin { width: 32px; height: 32px; font-size: 0.9rem; }
+}
+
+@media (max-width: 480px) {
+  #leaders-section { padding-top: 25px; padding-bottom: 20px; }
+  .leader-photo { width: 70px; height: 70px; }
+  .leader-function { font-size: 0.8rem; max-width: 10rem; }
+  .contact-email, .contact-linkedin { width: 30px; height: 30px; font-size: 0.85rem; }
+}
+
+/* Fade up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.72s ease, transform 0.72s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toasts */
+.toast-body strong {
+  font-weight: 600;
+  color: #fff;
+}

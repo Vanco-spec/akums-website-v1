@@ -1,0 +1,325 @@
+/* ====== HERO SECTION UPDATED ====== */
+.hero-section {
+  width: 100vw;          /* full viewport width */
+  height: 100vh;          /* full viewport height */
+  min-height: 100vh;      /* fallback for small screens */
+  background: url('../images/IMG_1552.JPG') no-repeat center center/cover;
+  background-attachment: fixed; /* Keeps image fixed while scrolling */
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-section .container.hero-content {
+  width: 100%; /* full width */
+  max-width: none; /* remove default Bootstrap max-width */
+}
+
+.hero-section .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55), 
+    rgba(0, 0, 0, 0.35)
+  );
+  z-index: 1;
+}
+
+.hero-section .container.hero-content {
+  margin-top: 90px; /* Responsive below */
+  position: relative;
+  z-index: 2;
+  animation: heroFadeIn 1.2s ease-out forwards;
+}
+
+/* ===== HERO TEXT ===== */
+.hero-titles {
+  font-family: "Montserrat", "Poppins", sans-serif;
+  color: #ffff;
+  font-size: 1.9rem; /* Responsive below */
+  font-weight: 900;
+  line-height: 1.0; /* Slightly increased on small screens for readability */
+  margin-bottom: 1rem; /* Responsive below */
+  letter-spacing: -1px; /* Reduced on small screens to prevent cramped look */
+  text-transform: uppercase;
+  animation: slideUp 1s ease-out 0.5s forwards;
+  opacity: 0;
+  .hero-title {
+  white-space: nowrap; /* Prevent line break */
+  overflow-x: auto;    /* Allow horizontal scroll if too wide */
+}
+}
+
+.hero-subtitles {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 0.93rem; /* Responsive below */
+  font-weight: 500;
+  max-width: 720px; /* Responsive below */
+  margin: 0 auto 2rem auto; /* Responsive below */
+  animation: slideUp 1s ease-out 0.8s forwards;
+  opacity: 0;
+  line-height: 1.6; /* Adjusted for better flow on small screens */
+}
+
+/* ===== CTA BUTTON (corrected & final) ===== */
+.btn.hero-cta {
+  margin-top: 50px; /* Responsive below */
+  /* Animation already defined elsewhere (popIn) */
+  animation: popIn 0.8s ease-out 1.2s forwards;
+  opacity: 0;
+
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem; /* Responsive below for better spacing */
+  box-sizing: border-box;
+
+  /* Explicit size - made more fluid */
+  width: 200px; /* Responsive below */
+  height: 40px; /* Responsive below */
+  padding: 0 1.4rem; /* Responsive below */
+
+  /* Typography */
+  font-weight: 700;
+  font-size: 0.9rem; /* Responsive below */
+  line-height: 1; /* Prevents vertical misalignment */
+
+  /* Shape & visuals */
+  border-radius: 50px;
+  border: 2.0px solid rgba(255,255,255,0.95);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+
+  /* Transitions (explicit, not `all`) */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-radius 0.2s ease;
+}
+
+/* Hover & focus (no stray spaces — selects the same element) */
+.btn.hero-cta:hover,
+.btn.hero-cta:focus {
+  transform: translateY(-4px) scale(1.05); /* Reduced scale on small screens below */
+  border: 1.5px solid #081F33;
+  background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.30); /* Reduced shadow on small screens */
+  border-radius: 30px;
+  color: #fff;
+  outline: none; /* Keep, but use :focus-visible for keyboard */
+}
+
+/* Keyboard-focus visible style (accessibility) */
+.btn.hero-cta:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.18);
+}
+
+/* Active / pressed state */
+.btn.hero-cta:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideUp {
+  from { opacity: 0; transform: translate3d(0,40px,0); }
+  to { opacity: 1; transform: translate3d(0,0,0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroFadeIn {
+  0% { filter: blur(8px); }
+  100% { filter: blur(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ===== Loading state ===== */
+.hero-section.loading {
+  background: #2F8CFF;
+}
+
+.hero-section.loading .hero-content {
+  visibility: hidden;
+}
+
+/* ====== RESPONSIVENESS ====== */
+/* Large desktops/tablets (1200px and below) */
+@media (max-width: 1200px) {
+  .hero-section {
+    height: 100vh; /* Slightly reduce height for better fit */
+  }
+  .hero-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.9rem;
+    letter-spacing: -0.8px;
+  }
+  .hero-subtitle {
+    font-size: 1.4rem;
+    max-width: 650px;
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+  }
+  .btn.hero-cta {
+    width: 190px;
+    height: 38px;
+    font-size: 1.1rem;
+    padding: 0 1.3rem;
+    gap: 0.15rem;
+  }
+}
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .hero-section {
+    height: 100vh; /* Further reduce to avoid tall sections on tablets */
+  }
+  .hero-section .container.hero-content {
+    margin-top: 70px; /* Reduce top margin for better centering */
+  }
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.7px;
+    line-height: 1.1;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 1.6rem;
+    line-height: 1.5;
+  }
+  .btn.hero-cta {
+    margin-top: 40px;
+    width: 180px;
+    height: 36px;
+    font-size: 1rem;
+    padding: 0 1.2rem;
+    gap: 0.2rem;
+  }
+  .btn.hero-cta:hover {
+    transform: translateY(-3px) scale(1.03); /* Subtle hover for touch devices */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* Small tablets/phones (768px and below) */
+@media (max-width: 768px) {
+  .hero-section {
+    background-attachment: scroll;
+    height: 100vh; /* Compact for phones */
+    min-height: 450px;
+  }
+  .hero-section .container.hero-content {
+    margin-top: 50px;
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+    max-width: 500px;
+    margin-bottom: 1.4rem;
+    line-height: 1.5;
+  }
+  .btn.hero-cta {
+    margin-top: 35px;
+    width: 170px;
+    height: 45px; /* Slightly taller for touch */
+    font-size: 0.95rem;
+    padding: 0 1.1rem;
+    gap: 0.25rem;
+  }
+  .btn.hero-cta:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.20);
+  }
+}
+
+/* Small phones (576px and below) */
+@media (max-width: 576px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 400px;
+  }
+  .hero-section .container.hero-content {
+    margin-top: 40px;
+  }
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    max-width: 90%; /* More flexible width */
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+  }
+  .btn.hero-cta {
+    margin-top: 30px;
+    width: 160px;
+    height: 50px;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    gap: 0.3rem;
+  }
+  .btn.hero-cta:hover {
+    transform: translateY(-1px) scale(1.01); /* Minimal hover for small screens */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  .hero-section {
+    height: 100vh;
+    min-height: 350px;
+  }
+  .hero-section .container.hero-content {
+    margin-top: 30px;
+  }
+  .hero-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.4px;
+    line-height: 1.3;
+  }
+  .hero-subtitle {
+    font-size: 0.9rem;
+    max-width: 95%;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  .btn.hero-cta {
+    margin-top: 25px;
+    width: calc(100% - 40px); /* Full width minus margins for natural fit */
+    max-width: 280px;
+    height: 55px;
+    font-size: 0.85rem;
+    padding: 0 0.9rem;
+    gap: 0.35rem;
+  }
+  .btn.hero-cta:hover {
+    transform: none; /* Disable hover transforms on very small screens for better UX */
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+  }
+}

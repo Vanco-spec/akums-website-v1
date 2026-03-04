@@ -1,0 +1,512 @@
+/* ================= NEWSLETTER SECTION ================= */
+
+.newsletter-section {
+  background:
+    radial-gradient(
+      circle at top,
+      #081F33 0%,
+      #081F33 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      120deg,
+      #081F33 0%,
+      #0F3A5F 0%,
+      transparent 60%
+    ),
+    linear-gradient(
+      90deg,
+      #081F33 0%,
+      #0F3A5F 60%,
+      #1F4FA3 100%
+    ),
+     radial-gradient(
+      circle at bottom,
+      #081F33 0%,
+      #081F33 0%,
+      transparent 60%
+    );
+
+  padding: 80px 20px; /* Responsive below */
+  min-height: 100vh; /* Responsive below */
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-card {
+  max-width: 700px; /* Responsive below */
+  background: rgba(255, 255, 255, 0.23);
+  backdrop-filter: blur(14px);
+  border-radius: 24px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  color: #000000;
+  padding: 40px; /* Responsive below */
+  margin: 0 auto; /* Ensure centering */
+}
+
+.newsletter-badge {
+  padding: 6px 16px; /* Responsive below */
+  border-radius: 999px;
+  font-size: 0.75rem; /* Responsive below */
+  font-weight: 600;
+  color: #d4a14a;
+  background: rgba(212, 161, 74, 0.15);
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem; /* Responsive below */
+}
+
+.newsletter-title {
+  font-size: clamp(1.8rem, 4vw, 2.3rem); /* Responsive below */
+  font-weight: 700;
+  margin-bottom: 1rem; /* Responsive below */
+  color: #000000; /* Ensure visibility on dark background */
+}
+
+.newsletter-text {
+  max-width: 600px; /* Responsive below */
+  margin-inline: auto;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 0.8rem; /* Responsive below */
+  line-height: 1.6;
+  margin-bottom: 2rem; /* Responsive below */
+}
+
+.newsletter-form {
+  margin-top: 1rem;
+  display: flex; /* Responsive below */
+  gap: 1rem; /* Responsive below */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 220px; /* Responsive below */
+  padding: 10px 18px; /* Responsive below */
+  border-radius: 999px; 
+  border: none;
+  outline: none;
+  font-size: 0.85rem; /* Responsive below */
+}
+
+.newsletter-input::placeholder {
+  color: #999;
+}
+
+.newsletter-btn {
+  padding: 10px 25px; /* Responsive below */
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(
+    135deg,
+    #d4a14a,
+    #f1c27d
+  );
+  color: #081f33;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem; /* Responsive below */
+}
+
+.newsletter-btn:hover {
+  transform: translateY(-2px); /* Reduced lift on small screens below */
+  box-shadow: 0 10px 25px rgba(212, 161, 74, 0.35);
+}
+
+.newsletter-note {
+  font-size: 0.80rem; /* Responsive below */
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 1rem; /* Responsive below */
+  text-align: center;
+}
+
+/* ================= NEWSLETTER SAMPLES ================= */
+
+.newsletter-samples {
+  text-align: left;
+  margin-top: 3rem; /* Responsive below */
+}
+
+.sample-card {
+  height: 100%;
+  padding: 20px; /* Responsive below */
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 4px solid rgba(8, 0, 249, 0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem; /* Responsive below */
+}
+
+.sample-card:hover {
+  transform: translateY(-6px); /* Reduced lift on small screens below */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.sample-card h5 {
+  font-size: 1.0rem; /* Responsive below */
+  font-weight: 600;
+  margin: 10px 0; /* Responsive below */
+  color: #081f33;
+}
+
+.sample-card p {
+  font-size: 0.8rem; /* Responsive below */
+  color: #0F3A5F;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.sample-tag {
+  display: inline-block;
+  font-size: 0.7rem; /* Responsive below */
+  font-weight: 700;
+  padding: 4px 10px; /* Responsive below */
+  border-radius: 999px;
+  background: rgba(212, 161, 74, 0.25);
+  color: #d4a14a;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem; /* Responsive below */
+}
+
+/* ================== Responsive Design ================== */
+/* Large desktops/tablets (1200px and below) */
+@media (max-width: 1200px) {
+  .newsletter-section {
+    padding: 100px 18px;
+    min-height: 95vh;
+  }
+  .newsletter-card {
+    max-width: 650px;
+    padding: 35px;
+  }
+  .newsletter-badge {
+    padding: 5px 14px;
+    font-size: 0.82rem;
+    margin-bottom: 0.9rem;
+  }
+  .newsletter-title {
+    font-size: clamp(1.7rem, 3.5vw, 2.1rem);
+    margin-bottom: 0.9rem;
+  }
+  .newsletter-text {
+    max-width: 550px;
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+  .newsletter-form {
+    gap: 0.9rem;
+  }
+  .newsletter-input {
+    min-width: 240px;
+    padding: 13px 16px;
+    font-size: 0.95rem;
+  }
+  .newsletter-btn {
+    padding: 13px 26px;
+    font-size: 0.95rem;
+  }
+  .newsletter-btn:hover {
+    transform: translateY(-1.5px);
+  }
+  .newsletter-note {
+    font-size: 0.82rem;
+    margin-top: 0.9rem;
+  }
+  .newsletter-samples {
+    margin-top: 2.8rem;
+  }
+  .sample-card {
+    padding: 18px;
+    margin-bottom: 0.9rem;
+  }
+  .sample-card:hover {
+    transform: translateY(-5px);
+  }
+  .sample-card h5 {
+    font-size: 1rem;
+    margin: 9px 0;
+  }
+  .sample-card p {
+    font-size: 0.88rem;
+  }
+  .sample-tag {
+    font-size: 0.68rem;
+    padding: 3px 9px;
+    margin-top: 0.4rem;
+  }
+}
+
+/* Tablets (992px and below) */
+@media (max-width: 992px) {
+  .newsletter-section {
+    padding: 90px 16px;
+    min-height: 90vh;
+  }
+  .newsletter-card {
+    max-width: 600px;
+    padding: 30px;
+  }
+  .newsletter-badge {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .newsletter-title {
+    font-size: clamp(1.6rem, 3vw, 2rem);
+    margin-bottom: 0.8rem;
+  }
+  .newsletter-text {
+    max-width: 500px;
+    font-size: 0.92rem;
+    margin-bottom: 1.6rem;
+  }
+  .newsletter-form {
+    gap: 0.8rem;
+  }
+  .newsletter-input {
+    min-width: 220px;
+    padding: 12px 15px;
+    font-size: 0.92rem;
+  }
+  .newsletter-btn {
+    padding: 12px 24px;
+    font-size: 0.92rem;
+  }
+  .newsletter-btn:hover {
+    transform: translateY(-1.5px);
+  }
+  .newsletter-note {
+    font-size: 0.8rem;
+    margin-top: 0.8rem;
+  }
+  .newsletter-samples {
+    margin-top: 2.5rem;
+  }
+  .sample-card {
+    padding: 16px;
+    margin-bottom: 0.8rem;
+  }
+  .sample-card:hover {
+    transform: translateY(-4px);
+  }
+  .sample-card h5 {
+    font-size: 0.98rem;
+    margin: 8px 0;
+  }
+  .sample-card p {
+    font-size: 0.86rem;
+  }
+  .sample-tag {
+    font-size: 0.66rem;
+    padding: 3px 8px;
+    margin-top: 0.4rem;
+  }
+}
+
+/* Small tablets/phones (768px and below) */
+@media (max-width: 768px) {
+  .newsletter-section {
+    padding: 80px 14px;
+    min-height: auto; /* Allow natural height on mobile */
+  }
+  .newsletter-card {
+    max-width: 90%; /* More flexible width */
+    padding: 25px;
+  }
+  .newsletter-badge {
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    margin-bottom: 0.7rem;
+  }
+  .newsletter-title {
+    font-size: 1.9rem;
+    margin-bottom: 0.7rem;
+  }
+  .newsletter-text {
+    max-width: 100%; /* Full width on small screens */
+    font-size: 0.9rem;
+    margin-bottom: 1.4rem;
+  }
+  .newsletter-form {
+    flex-direction: column; /* Stack input and button */
+    gap: 0.7rem;
+    align-items: center;
+  }
+  .newsletter-input {
+    min-width: 200px;
+    padding: 11px 14px;
+    font-size: 0.9rem;
+    width: 100%; /* Full width */
+    max-width: 300px;
+  }
+  .newsletter-btn {
+    padding: 11px 22px;
+    font-size: 0.9rem;
+    width: fit-content;
+  }
+  .newsletter-btn:hover {
+    transform: translateY(-1px);
+  }
+  .newsletter-note {
+    font-size: 0.78rem;
+    margin-top: 0.7rem;
+  }
+  .newsletter-samples {
+    margin-top: 2rem;
+    text-align: center; /* Center samples on mobile */
+  }
+  .sample-card {
+    padding: 14px;
+    margin-bottom: 0.7rem;
+  }
+  .sample-card:hover {
+    transform: translateY(-3px);
+  }
+  .sample-card h5 {
+    font-size: 0.95rem;
+    margin: 7px 0;
+  }
+  .sample-card p {
+    font-size: 0.84rem;
+  }
+  .sample-tag {
+    font-size: 0.64rem;
+    padding: 3px 7px;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Small phones (576px and below) */
+@media (max-width: 576px) {
+  .newsletter-section {
+    padding: 70px 12px;
+  }
+  .newsletter-card {
+    max-width: 95%;
+    padding: 20px;
+  }
+  .newsletter-badge {
+    padding: 4px 9px;
+    font-size: 0.76rem;
+    margin-bottom: 0.6rem;
+  }
+  .newsletter-title {
+    font-size: 1.7rem;
+    margin-bottom: 0.6rem;
+  }
+  .newsletter-text {
+    font-size: 0.88rem;
+    margin-bottom: 1.2rem;
+  }
+  .newsletter-form {
+    gap: 0.6rem;
+  }
+  .newsletter-input {
+    min-width: 180px;
+    padding: 10px 13px;
+    font-size: 0.88rem;
+    max-width: 280px;
+  }
+  .newsletter-btn {
+    padding: 10px 20px;
+    font-size: 0.88rem;
+  }
+  .newsletter-btn:hover {
+    transform: translateY(-1px);
+  }
+  .newsletter-note {
+    font-size: 0.76rem;
+    margin-top: 0.6rem;
+  }
+  .newsletter-samples {
+    margin-top: 1.8rem;
+  }
+  .sample-card {
+    padding: 12px;
+    margin-bottom: 0.6rem;
+  }
+  .sample-card:hover {
+    transform: translateY(-2px);
+  }
+  .sample-card h5 {
+    font-size: 0.92rem;
+    margin: 6px 0;
+  }
+  .sample-card p {
+    font-size: 0.82rem;
+  }
+  .sample-tag {
+    font-size: 0.62rem;
+    padding: 2px 6px;
+    margin-top: 0.3rem;
+  }
+}
+
+/* Very small screens (360px and below) */
+@media (max-width: 360px) {
+  .newsletter-section {
+    padding: 60px 10px;
+  }
+  .newsletter-card {
+    max-width: 100%;
+    padding: 15px;
+  }
+  .newsletter-badge {
+    padding: 3px 8px;
+    font-size: 0.74rem;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter-title {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter-text {
+    font-size: 0.86rem;
+    margin-bottom: 1rem;
+  }
+  .newsletter-form {
+    gap: 0.5rem;
+  }
+  .newsletter-input {
+    min-width: 160px;
+    padding: 9px 12px;
+    font-size: 0.86rem;
+    max-width: 260px;
+  }
+  .newsletter-btn {
+    padding: 9px 18px;
+    font-size: 0.86rem;
+  }
+  .newsletter-btn:hover {
+    transform: none; /* Disable for very small screens */
+  }
+  .newsletter-note {
+    font-size: 0.74rem;
+    margin-top: 0.5rem;
+  }
+  .newsletter-samples {
+    margin-top: 1.5rem;
+  }
+  .sample-card {
+    padding: 10px;
+    margin-bottom: 0.5rem;
+  }
+  .sample-card:hover {
+    transform: none; /* Disable for very small screens */
+  }
+  .sample-card h5 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+  .sample-card p {
+    font-size: 0.8rem;
+  }
+  .sample-tag {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+    margin-top: 0.2rem;
+  }
+}
