@@ -1,26 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { defineConfig } from 'vite'
 import { Analytics } from "@vercel/analytics/react"
-
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
-
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import './styles.css'
+// Animate.css
 import 'animate.css'
 
-// import AOS from 'aos'
+// AOS
 import 'aos/dist/aos.css'
-import { useEffect } from 'react'
-import { motion } from "framer-motion"
 
 import './index.css'
 
