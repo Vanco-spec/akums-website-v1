@@ -40,14 +40,13 @@
 
 /* ===== HERO TEXT ===== */
 .hero-titles {
-  font-family: "Montserrat", "Poppins", sans-serif;
+  font-family: 'Ephesis', cursive;
   color: #ffff;
-  font-size: 1.9rem; /* Responsive below */
+  font-size: 3.5rem; /* Responsive below */
   font-weight: 900;
-  line-height: 1.0; /* Slightly increased on small screens for readability */
+  line-height: 1.3; /* Slightly increased on small screens for readability */
   margin-bottom: 1rem; /* Responsive below */
   letter-spacing: -1px; /* Reduced on small screens to prevent cramped look */
-  text-transform: uppercase;
   animation: slideUp 1s ease-out 0.5s forwards;
   opacity: 0;
   .hero-title {
@@ -57,9 +56,9 @@
 }
 
 .hero-subtitles {
-  font-family: "Poppins", sans-serif;
+  font-family:"Funnel Sans", sans-serif;
   color: #ffffff;
-  font-size: 0.93rem; /* Responsive below */
+  font-size: 1.15rem; /* Responsive below */
   font-weight: 500;
   max-width: 720px; /* Responsive below */
   margin: 0 auto 2rem auto; /* Responsive below */
@@ -70,6 +69,7 @@
 
 /* ===== CTA BUTTON (corrected & final) ===== */
 .btn.hero-cta {
+  font-family:"Funnel Sans", sans-serif;
   margin-top: 50px; /* Responsive below */
   /* Animation already defined elsewhere (popIn) */
   animation: popIn 0.8s ease-out 1.2s forwards;

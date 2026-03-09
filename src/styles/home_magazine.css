@@ -63,7 +63,8 @@
 
 /* Paragraphs */
 .magazine-description {
-  font-size: 0.8rem; /* Responsive below */
+   font-family: 'Noticia Text', serif;
+  font-size: 0.9rem; /* Responsive below */
   color: #555;
   line-height: 1.8;
   margin-bottom: 1.5rem; /* Responsive below */
@@ -148,6 +149,7 @@
 
 /* CTA Button */
 .btn-primary {
+  font-family:"Funnel Sans", sans-serif;
   background: #000;
   color: #fff;
   border: none;
@@ -326,7 +328,7 @@
   }
   .btn-primary {
     display: block;
-    margin: 2rem auto 0;
+    margin: 1rem auto 0;
     text-align: center;
     width: fit-content;
     padding: 0.75rem 1.7rem;

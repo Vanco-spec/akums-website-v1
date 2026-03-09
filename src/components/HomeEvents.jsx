@@ -13,31 +13,31 @@ const eventsData = [
   details: "September 2026 | Kenyatta University Main Campus",
   full:
     "The AKUMS White Coat Ceremony is a cherished tradition marking the formal induction of first-year medical students into the profession. Students receive their first white coats, symbolizing responsibility, compassion, and commitment to ethical medical practice. Distinguished faculty and clinicians deliver inspiring addresses that reinforce the values of integrity, service, and respect for patients.",
-  sponsors: ["Sponsor Us? Contact us"],
+  sponsors: ["Sponsor Us? Contact us @ Email : akumssecretariat@gmail.com"],
 },
 {
   id: 2,
   image: "/images/IMG_2038.JPG",
   badge: "Sports & Social",
-  title: "AKUMS Football Tournament",
+  title: "Football Tournament",
   intro:
     "An exciting tournament uniting medical students through teamwork, fitness, and friendly competition.",
   details: "To Be Announced | Kenyatta University Main Campus",
   full:
     "The AKUMS Football Tournament is an annual wellness and social event promoting physical fitness, teamwork, and stress relief among medical students. Teams compete in a structured knockout format officiated by certified referees. Beyond the matches, the event fosters networking, school spirit, and camaraderie, creating a vibrant and memorable experience for all.",
-  sponsors: ["Sponsor Us? Contact us"],
+  sponsors: ["Sponsor Us? Contact us @ Email : akumssecretariat@gmail.com"],
 },
 {
   id: 3,
   image: "/images/IMG_1512.JPG",
   badge: "Community & Welfare",
-  title: "AKUMS Blood Donation Drive",
+  title: "Blood Donation Drive",
   intro:
     "A life-saving initiative uniting students and partners to support patients in need of blood.",
   details: "To Be Announced | Kenyatta University Main Campus",
   full:
     "The AKUMS Blood Donation Drive is a humanitarian initiative addressing the critical shortage of blood in hospitals and emergency facilities. Conducted alongside certified medical teams, the drive ensures a safe and well-supervised donation process. The event also raises awareness about the importance of voluntary blood donation and community responsibility, while inviting partners to support logistics and outreach efforts.",
-  sponsors: ["Sponsor Us? Contact us"],
+  sponsors: ["Sponsor Us? Contact us @ Email : akumssecretariat@gmail.com"],
 }
 ];
 
@@ -47,8 +47,8 @@ function HomeEvents() {
   <div className="container">
     <div className="text-center mb-5">
       <h2>UPCOMING EVENTS</h2>
-      <p className="mb-0">
-        Discover impactful initiatives designed to inspire leadership, service, and academic excellence.
+      <p className="delap mb-0">
+        Discover impactful events designed to inspire leadership, service, and academic excellence.
       </p>
     </div>
 

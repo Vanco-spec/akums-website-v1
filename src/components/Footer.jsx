@@ -48,11 +48,11 @@ export default function Footer() {
             </p>
             <p className="small footer-p mb-1">
               <i className="bi bi-envelope-fill me-2"></i>
-              Akumssecretariat@gmail.com
+              akumssecretariat@gmail.com
             </p>
             <p className="small footer-p mb-3">
               <i className="bi bi-telephone-fill me-2"></i>
-              -
+              - Will be available soon
             </p>
 
             <div className="social-icons d-flex gap-3">

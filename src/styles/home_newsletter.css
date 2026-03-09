@@ -63,6 +63,10 @@
   color: #000000; /* Ensure visibility on dark background */
 }
 
+.soon{
+  font-size: 1.95rem;
+}
+
 .newsletter-text {
   max-width: 600px; /* Responsive below */
   margin-inline: auto;
@@ -126,7 +130,7 @@
 
 .newsletter-samples {
   text-align: left;
-  margin-top: 3rem; /* Responsive below */
+  margin-top: 2.0rem; /* Responsive below */
 }
 
 .sample-card {

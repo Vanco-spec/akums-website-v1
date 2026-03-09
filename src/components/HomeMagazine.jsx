@@ -28,7 +28,7 @@ The inaugural issue is scheduled for publication in February 2026</p>
               </div>
               
               <a 
-                href="/magazineabout.html" 
+                href="/magazineabout" 
                 className="btn btn-primary fade-item delay-7 mt-4" 
                 aria-label="Explore AKUMS Magazine"
               >
@@ -40,7 +40,7 @@ The inaugural issue is scheduled for publication in February 2026</p>
             <div className="col-lg-6 text-center fade-item delay-2">
               <div className="magazine-img-wrapper">
                 <img 
-                  src="https://images.unsplash.com/photo-1631543722888-01f8a17ebf3f?auto=format&fit=crop&w=1080&q=80" 
+                  src="/images/magazinefront2.jpeg" 
                   alt="AKUMS Magazine Cover - Stories of Medical Innovation" 
                   className="img-fluid magazine-img" 
                   loading="lazy"

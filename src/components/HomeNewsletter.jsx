@@ -22,6 +22,7 @@ const HomeNewsletter = () => {
         <h2 className="newsletter-title mb-3">
           AKUMS Newsletter
         </h2>
+        <h3 className="soon">Coming Soon</h3>
 
         <p className="newsletter-text mb-4">
           A glimpse of what our subscribers receive — concise updates, opportunities,
@@ -44,10 +45,10 @@ const HomeNewsletter = () => {
 
           <div className="col-md-4">
             <div className="sample-card">
-              <span className="sample-tag">RESEARCH</span>
-              <h5>Student Research Spotlight</h5>
+              <span className="sample-tag">SOCIAL</span>
+              <h5>Students Social Events</h5>
               <p>
-                Meet KU students presenting innovative research at the Annual
+                Meet up with KU student doctors presenting innovative research at the Annual
                 Medical Symposium and beyond.
               </p>
             </div>

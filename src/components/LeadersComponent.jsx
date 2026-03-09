@@ -167,7 +167,7 @@ const LeadersComponent = () => {
           className="section-title text-center mb-4"
           style={{ color: "#081F33" }}
         >
-          LEADERSHIP SPOTLIGHT
+          EXECUTIVE BOARDS
         </h2>
 
         <p className="lead text-center mb-5 fw-normal">

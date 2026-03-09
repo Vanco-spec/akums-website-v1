@@ -13,7 +13,7 @@ function HomeWhoWeAre() {
       <div className="container">
         <div className="row align-items-center g-4">
           {/* Image Side */}
-          <div className="col-md-5 fade-on-scroll-left">
+          <div className="col-md-6 fade-on-scroll-left">
             <div className="about-img-wrapper">
               <img
                 src="/images/IMG_1283.JPG"
@@ -28,7 +28,7 @@ function HomeWhoWeAre() {
           </div>
 
           {/* Text Side */}
-          <div className="col-md-7 fade-on-scroll-right py-5">
+          <div className="col-md-6 fade-on-scroll-right py-5">
             <h2
               id="about-title"
               className="section-titles mb-4"

@@ -9,7 +9,7 @@
 
 .events-section h2 {
   
-  font-size: 2.0rem; /* Responsive below */
+  font-size: 2.3rem; /* Responsive below */
   font-weight: 700;
   margin-bottom: 30px; /* Responsive below */
   color: #081F33;
@@ -26,8 +26,14 @@
 }
 
 .events-section h2 {
+  
   font-family: 'Poppins', sans-serif;
   color: #081F33;
+}
+
+.delap{
+  font-family:"Funnel Sans", sans-serif;
+  font-size: 1.1rem;
 }
 
 .events-list .event-card {
@@ -51,6 +57,8 @@
 }
 
 .event-badge {
+  margin-top: 30px;
+  font-family:"Funnel Sans", sans-serif;
   display: inline-block;
   background: #0d6efd;
   color: #fff;
@@ -60,8 +68,14 @@
   margin-bottom: 0.5rem;
 }
 
+h3{
+  font-size: 50px;
+  font-family: 'Cookie', cursive;
+}
+
 .event-details {
-  font-size: 0.85rem;
+  font-family: 'Cookie', cursive;
+  font-size: 0.95rem;
   color: #555;
 }
 
@@ -73,6 +87,7 @@
   border-radius: 15px;
   margin-right: 0.3rem;
   font-size: 0.75rem;
+  margin-bottom: 40px;
 }
 
 /* Mobile Responsive */
