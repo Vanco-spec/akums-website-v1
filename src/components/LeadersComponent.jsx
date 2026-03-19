@@ -20,13 +20,30 @@ const leaders2025 = [
     linkedin: "https://linkedin.com/in/marywambui",
     featured: true,
   },
+  {role: "Secretary General",
+    name: "Faith Waigi",
+    description:
+      "Oversees minute writing in meetings, coordinates with the alumni network, supports social impact activities.",
+    email: "waigifaith@gmail.com",
+    linkedin: "https://www.linkedin.com/in/faith-waigi-102478h/",
+    featured: true,
+  },
+
+  {role: "Assistant Secretary General",
+    name: "Bravin Willliams",
+    description:
+      "Supports the Secretary General.",
+    email: "mary.wambui@ku.ac.ke",
+    linkedin: "https://linkedin.com/in/marywambui",
+    featured: true,
+  },
   {
     role: "Organizing Secretary",
     name: "Airo Emmanuel",
     description:
       "Supports the President, oversees programs, and coordinates cross-department collaboration.",
     email: "mary.wambui@ku.ac.ke",
-    linkedin: "https://linkedin.com/in/marywambui",
+    linkedin: "https://www.linkedin.com/in/airo-emmanuel-b23748291/",
     featured: true,
   },  
   {
@@ -83,7 +100,7 @@ const leaders2025 = [
     role: "Sports Representative",
     name: "Lewis Moronya",
     description:
-      "Maintains the website, manages online tools and supports digital events.",
+      "Organizes sports events and activities for medical students.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
@@ -91,7 +108,7 @@ const leaders2025 = [
     role: "Assistant Sports Representative",
     name: "Grievance Kiptoo",
     description:
-      "Maintains the website, manages online tools and supports digital events.",
+      "Assists the Sports Representative in organizing sports events and activities.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
