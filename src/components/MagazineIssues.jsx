@@ -276,7 +276,7 @@ export default function IssuePage() {
                     className="cover-img"
                     loading="lazy"
                   />
-                  <span className="cover-badge">Issue I</span>
+                  <span className="cover-badge"></span>
                 </div>
               </div>
               <div className="hero-note">
