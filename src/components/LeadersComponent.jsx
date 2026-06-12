@@ -20,13 +20,30 @@ const leaders2025 = [
     linkedin: "https://linkedin.com/in/marywambui",
     featured: true,
   },
+  {role: "Secretary General",
+    name: "Faith Waigi",
+    description:
+      "Oversees minute writing in meetings, coordinates with the alumni network, supports social impact activities.",
+    email: "waigifaith@gmail.com",
+    linkedin: "https://www.linkedin.com/in/faith-waigi-102478h/",
+    featured: true,
+  },
+
+  {role: "Assistant Secretary General",
+    name: "Bravin Willliams",
+    description:
+      "Supports the Secretary General.",
+    email: "mary.wambui@ku.ac.ke",
+    linkedin: "https://linkedin.com/in/marywambui",
+    featured: true,
+  },
   {
     role: "Organizing Secretary",
     name: "Airo Emmanuel",
     description:
-      "Head the Sports and Entertainment Committee. Plan, coordinate, and execute both internal and outreach programs of the Association.",
-    email: "",
-    linkedin: "https://www.linkedin.com/in/airo-emmanuel-b23748291/",
+      "Supports the President, oversees programs, and coordinates cross-department collaboration.",
+    email: "mary.wambui@ku.ac.ke",
+    linkedin: "https://linkedin.com/in/marywambui",
     featured: true,
   },  
   {
@@ -83,7 +100,7 @@ const leaders2025 = [
     role: "Sports Officer",
     name: "Lewis Moronya",
     description:
-      "Coordinate and oversee all sports and recreational activities of the Association. Organize interclass and interfaculty tournaments to strengthen unity and collaboration.",
+      "Maintains the website, manages online tools and supports digital events.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
@@ -91,7 +108,7 @@ const leaders2025 = [
     role: "Assistant Sports Officer",
     name: "Grievance Kiptoo",
     description:
-      "Assists the sports officer with his or her duties as stated by the constitution.",
+      "Maintains the website, manages online tools and supports digital events.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
