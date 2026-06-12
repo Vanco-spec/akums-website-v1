@@ -10,7 +10,7 @@ function HomeHero() {
 
       <div className="container position-relative hero-content">
         <h1 className="hero-titles mb-3">
-          Welcome to the Association of Kenyatta University Medicine Students
+          The Association of Kenyatta University Medicine Students
         </h1>
 
         <p className="hero-subtitles mb-4">
@@ -19,7 +19,6 @@ function HomeHero() {
         </p>
 
         <a href="#about-us" className="btn hero-cta">
-          <i className=" me-2"></i>
           Learn More
         </a>
       </div>

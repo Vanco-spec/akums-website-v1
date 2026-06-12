@@ -9,6 +9,7 @@ import Constitution from "./pages/Constitution";
 import Leaders from "./pages/Leaders";
 import MagazineAbout from "./pages/MagazineAbout";
 import MagazineIssue from "./pages/MagazineIssue";
+import MagazineReaderPage from "./pages/MagazineReaderPage";
 import MagazineLeader from "./pages/MagazineLeaders"; 
 import MagazineSubmission from "./pages/MagazineSubmission";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/leaders" element={<Leaders />} />
         <Route path="/magazineabout" element={<MagazineAbout />} />
         <Route path="/magazineissue" element={<MagazineIssue />} />
+        <Route path="/magazine/read" element={<MagazineReaderPage />} />
         <Route path="/magazineleaders" element={<MagazineLeader />} />
         <Route path="/magazinesubmission" element={<MagazineSubmission />} />
 

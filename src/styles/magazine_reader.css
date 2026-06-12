@@ -1,0 +1,42 @@
+/* Fullscreen reader */
+.mag-reader-wrapper {
+  position: fixed;
+  inset: 0;
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  z-index: 9999;
+  background: #ffffff;
+  overflow: hidden;
+}
+.mag-reader-header {
+  display: none; /* hidden in full-screen mode */
+}
+.mag-stage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mag-viewer {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: block;
+}
+@media (max-width: 900px) {
+  .mag-reader-wrapper {
+    padding: 16px;
+  }
+  .mag-viewer {
+    min-height: calc(100vh - 220px);
+  }
+  .mag-reader-title {
+    width: 100%;
+  }
+}

@@ -10,11 +10,12 @@ function Home() {
   return (
     <main>
   <HomeHero />
-  <HomeWhoWeAre />
-  <HomeEvents />
+  
+  {/* <HomeWhoWeAre />
+  <HomeMagazine />
   <Carousel />
   <HomeMagazine />
-  
+  <HomeEvents /> */}
   <HomeNewsletter />
 </main>
   )

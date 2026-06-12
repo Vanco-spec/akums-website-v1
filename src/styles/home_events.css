@@ -3,21 +3,21 @@
   margin-top: 50px;
   background: #fafafa;
   position: relative;
-  padding: 135px 0; /* Responsive below */
+  padding: 80px 0;
   text-align: center;
 }
 
 .events-section h2 {
-  
-  font-size: 2.3rem; /* Responsive below */
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
   font-weight: 700;
-  margin-bottom: 30px; /* Responsive below */
+  margin-bottom: 30px;
   color: #081F33;
 }
 
 .events-section h2::after {
   content: '';
-  width: 80px; /* Responsive below */
+  width: 80px;
   height: 3px;
   background: #007bff;
   display: block;
@@ -25,76 +25,249 @@
   border-radius: 5px;
 }
 
-.events-section h2 {
-  
-  font-family: 'Poppins', sans-serif;
-  color: #081F33;
-}
-
-.delap{
-  font-family:"Funnel Sans", sans-serif;
+.delap {
+  font-family: "Funnel Sans", sans-serif;
   font-size: 1.1rem;
+  text-align: center;
 }
 
+/* ====== Event Card ====== */
 .events-list .event-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  min-height: 230px;
+  align-items: stretch;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  position: relative;
+}
+
+/* Blue accent bar on far left */
+.events-list .event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #1F4FA3;
+  z-index: 3;
 }
 
 .events-list .event-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.11);
+}
+
+/* Image column — slanted right edge via clip-path */
+.event-card > .col-md-3 {
+  padding: 0;
+  flex: 0 0 40%;
+  max-width: 40%;
+  align-self: stretch;
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 0 100%);
 }
 
 .event-image {
   width: 100%;
   height: 100%;
+  min-height: 230px;
   object-fit: cover;
-  border-radius: 12px;
+  object-position: center;
+  display: block;
+  border-radius: 0;
 }
 
+/* Content column */
+.event-card > .col-md-9 {
+  flex: 1;
+  padding: 1.1rem 1.4rem 1.1rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ====== Badge ====== */
 .event-badge {
-  margin-top: 30px;
-  font-family:"Funnel Sans", sans-serif;
+  font-family: "Funnel Sans", sans-serif;
   display: inline-block;
-  background: #0d6efd;
-  color: #fff;
-  padding: 0.25rem 0.75rem;
+  background: rgba(31, 79, 163, 0.1);
+  color: #1F4FA3;
+  padding: 0.3rem 0.9rem;
   border-radius: 20px;
-  font-size: 0.75rem;
-  margin-bottom: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
 }
 
-h3{
-  font-size: 50px;
-  font-family: 'Cookie', cursive;
+/* ====== Title ====== */
+.event-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #081F33;
+  margin: 0.4rem 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
+/* ====== Short intro ====== */
+.event-intro {
+  font-weight: 500;
+  font-size: 0.82rem;
+  color: #1F4FA3;
+  text-align: center;
+  margin-bottom: 0.85rem;
+  line-height: 1.6;
+}
+
+/* ====== Date / Meta ====== */
 .event-details {
-  font-family: 'Cookie', cursive;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: #0F3A5F;
+  margin-bottom: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  background: #f4f7ff;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* ====== Full description ====== */
+.event-full {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.75;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ====== Sponsor block ====== */
+.event-section {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.event-section strong {
+  font-size: 0.78rem;
+  color: #081F33;
+}
+
+.event-section ul {
+  padding-left: 18px;
+  margin-top: 6px;
+  font-size: 0.75rem;
   color: #555;
 }
 
+.event-sponsors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 0.5rem;
+}
+
 .event-sponsors span {
-  display: inline-block;
-  background: #e9f0ff;
-  color: #0d6efd;
-  padding: 0.25rem 0.5rem;
-  border-radius: 15px;
-  margin-right: 0.3rem;
-  font-size: 0.75rem;
+  background: #f4f7ff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid #dce7ff;
+  font-size: 0.65rem;
+  color: #1F4FA3;
   margin-bottom: 40px;
 }
 
-/* Mobile Responsive */
+/* ====== View All Button ====== */
+.view-events-btn {
+  font-family: "Funnel Sans", sans-serif;
+  margin-top: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2.2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #081F33;
+  color: #fff;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: 0 4px 14px rgba(8, 31, 51, 0.3);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* Shimmer sweep on hover */
+.view-events-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transition: left 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: left;
+}
+
+.view-events-btn:hover,
+.view-events-btn:focus {
+  border-radius: 50px;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(8, 31, 51, 0.35);
+  background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
+  color: #fff;
+}
+
+.view-events-btn:hover::before,
+.view-events-btn:focus::before {
+  left: 130%;
+}
+
+.view-events-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(8, 31, 51, 0.25);
+}
+
+/* ====== Mobile card stacking ====== */
 @media (max-width: 768px) {
   .events-list .event-card {
     flex-direction: column;
     text-align: center;
+    min-height: unset;
+  }
+
+  /* Remove slant and restore full-width image on mobile */
+  .event-card > .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    clip-path: none;
+  }
+
+  .event-card > .col-md-9 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 1rem 1.25rem;
   }
 
   .event-card .col-md-3,
@@ -109,159 +282,43 @@ h3{
   }
 }
 
-/* Title */
-.event-content h3 {
-  font-size: 1.0rem;
-  font-weight: 600;
-  color: #000;
-  margin-top: 8px;
-  text-transform: uppercase;
-}
-
-/* Short intro */
-.event-intro {
-  font-weight: 500;
-  font-size: 0.8rem; /* Responsive below */
-  color: #1F4FA3;
-}
-
-/* Meta */
-.event-details {
-  font-weight: 600;
-  font-size: 0.75rem; /* Responsive below */
-  color: #0F3A5F;
-  margin-bottom: 3px;
-}
-
-/* Full description */
-.event-full {
-  font-size: 0.75rem; /* Responsive below */
-  color: #555;
-  line-height: 1.65;
-  margin-top: 6.5px;
-}
-
-/* Section blocks */
-.event-section {
-  margin-top: 1px; /* Responsive below */
-}
-
-.event-section strong {
-  font-size: 0.8rem; /* Responsive below */
-  color: #081F33;
-}
-
-/* Guests */
-.event-section ul {
-  padding-left: 18px; /* Responsive below */
-  margin-top: 6px;
-  font-size: 0.75rem; /* Responsive below */
-  color: #555;
-}
-
-/* Sponsors */
-.event-sponsors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px; /* Responsive below */
-  margin-top: 6px;
-}
-
-.event-sponsors span {
-  background: #f1f1f1;
-  padding: 4px 10px; /* Responsive below */
-  border-radius: 6px;
-  font-size: 0.60rem; /* Responsive below */
-  color: #1F4FA3;
-}
-
-/* ====== View Button ====== */
-.view-events-btn {
-  margin-top: 60px; /* Responsive below */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.9rem 2.2rem; /* Responsive below */
-  min-width: 140px; /* Responsive below */
-  height: 48px; /* Responsive below */
-  border-radius: 40px;
-  font-weight: 600;
-  font-size: 0.85rem; /* Responsive below */
-  background: #000;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.view-events-btn:hover {
-  background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
-  transform: translateY(-4px) scale(1.05); /* Reduced scale on small screens below */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-
-
-/* Delays removed - animations now instant */
-
 /* ====== Responsive ====== */
-/* Large desktops/tablets (1200px and below) */
 @media (max-width: 1200px) {
   .events-section {
     padding: 70px 0;
   }
   .events-section h2 {
-    font-size: 2.3rem;
     margin-bottom: 18px;
   }
   .events-section h2::after {
     width: 70px;
   }
-  .events-container {
-    gap: 0.9rem;
-    padding: 0 18px;
-  }
-  .event-card {
-    width: 380px;
-  }
-  .event-image {
-    height: 190px;
-  }
-  .event-content {
-    padding: 20px;
-    gap: 9px;
-  }
   .event-badge {
     font-size: 0.74rem;
     padding: 3px 11px;
   }
-  .event-content h3 {
-    font-size: 1.3rem;
+  .event-title {
+    font-size: 0.98rem;
   }
   .event-intro {
-    font-size: 0.92rem;
+    font-size: 0.78rem;
   }
   .event-details {
-    font-size: 0.83rem;
+    font-size: 0.73rem;
   }
   .event-full {
-    font-size: 0.88rem;
-  }
-  .event-section {
-    margin-top: 9px;
+    font-size: 0.73rem;
   }
   .event-section strong {
-    font-size: 0.88rem;
+    font-size: 0.78rem;
   }
   .event-section ul {
     padding-left: 16px;
-    font-size: 0.83rem;
-  }
-  .event-sponsors {
-    gap: 5px;
+    font-size: 0.73rem;
   }
   .event-sponsors span {
     padding: 3px 9px;
-    font-size: 0.74rem;
+    font-size: 0.63rem;
   }
   .view-events-btn {
     margin-top: 55px;
@@ -275,7 +332,6 @@ h3{
   }
 }
 
-/* Tablets (992px and below) */
 @media (max-width: 992px) {
   .events-section {
     padding: 60px 0;
@@ -287,52 +343,35 @@ h3{
   .events-section h2::after {
     width: 60px;
   }
-  .events-container {
-    gap: 0.8rem;
-    padding: 0 16px;
-  }
-  .event-card {
-    width: 300px; /* Matches your original, but scaled down further below */
-  }
   .event-image {
     height: 180px;
-  }
-  .event-content {
-    padding: 18px;
-    gap: 8px;
   }
   .event-badge {
     font-size: 0.72rem;
     padding: 3px 10px;
   }
-  .event-content h3 {
-    font-size: 1.25rem;
+  .event-title {
+    font-size: 0.95rem;
   }
   .event-intro {
-    font-size: 0.9rem;
+    font-size: 0.76rem;
   }
   .event-details {
-    font-size: 0.81rem;
+    font-size: 0.71rem;
   }
   .event-full {
-    font-size: 0.86rem;
-  }
-  .event-section {
-    margin-top: 8px;
+    font-size: 0.71rem;
   }
   .event-section strong {
-    font-size: 0.86rem;
+    font-size: 0.76rem;
   }
   .event-section ul {
     padding-left: 14px;
-    font-size: 0.81rem;
-  }
-  .event-sponsors {
-    gap: 4px;
+    font-size: 0.71rem;
   }
   .event-sponsors span {
     padding: 3px 8px;
-    font-size: 0.72rem;
+    font-size: 0.62rem;
   }
   .view-events-btn {
     margin-top: 50px;
@@ -346,7 +385,6 @@ h3{
   }
 }
 
-/* Small tablets/phones (768px and below) */
 @media (max-width: 768px) {
   .events-section {
     margin-top: 25px;
@@ -359,54 +397,35 @@ h3{
   .events-section h2::after {
     width: 50px;
   }
-  .events-container {
-    flex-direction: column; /* Stack vertically */
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0 14px;
-  }
-  .event-card {
-    width: 92%; /* Full width minus padding */
-  }
   .event-image {
     height: 170px;
-  }
-  .event-content {
-    padding: 16px;
-    gap: 7px;
   }
   .event-badge {
     font-size: 0.7rem;
     padding: 3px 9px;
   }
-  .event-content h3 {
-    font-size: 1.2rem;
+  .event-title {
+    font-size: 0.92rem;
   }
   .event-intro {
-    font-size: 0.88rem;
+    font-size: 0.74rem;
   }
   .event-details {
-    font-size: 0.79rem;
+    font-size: 0.69rem;
   }
   .event-full {
-    font-size: 0.84rem;
-  }
-  .event-section {
-    margin-top: 7px;
+    font-size: 0.69rem;
   }
   .event-section strong {
-    font-size: 0.84rem;
+    font-size: 0.74rem;
   }
   .event-section ul {
     padding-left: 12px;
-    font-size: 0.79rem;
-  }
-  .event-sponsors {
-    gap: 3px;
+    font-size: 0.69rem;
   }
   .event-sponsors span {
     padding: 3px 7px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   .view-events-btn {
     margin-top: 45px;
@@ -420,7 +439,6 @@ h3{
   }
 }
 
-/* Small phones (576px and below) */
 @media (max-width: 576px) {
   .events-section {
     margin-top: 20px;
@@ -433,52 +451,35 @@ h3{
   .events-section h2::after {
     width: 40px;
   }
-  .events-container {
-    gap: 0.6rem;
-    padding: 0 12px;
-  }
-  .event-card {
-    width: 95%;
-  }
   .event-image {
     height: 160px;
-  }
-  .event-content {
-    padding: 14px;
-    gap: 6px;
   }
   .event-badge {
     font-size: 0.68rem;
     padding: 2px 8px;
   }
-  .event-content h3 {
-    font-size: 1.15rem;
+  .event-title {
+    font-size: 0.9rem;
   }
   .event-intro {
-    font-size: 0.86rem;
+    font-size: 0.72rem;
   }
   .event-details {
-    font-size: 0.77rem;
+    font-size: 0.67rem;
   }
   .event-full {
-    font-size: 0.82rem;
-  }
-  .event-section {
-    margin-top: 6px;
+    font-size: 0.67rem;
   }
   .event-section strong {
-    font-size: 0.82rem;
+    font-size: 0.72rem;
   }
   .event-section ul {
     padding-left: 10px;
-    font-size: 0.77rem;
-  }
-  .event-sponsors {
-    gap: 2px;
+    font-size: 0.67rem;
   }
   .event-sponsors span {
     padding: 2px 6px;
-    font-size: 0.68rem;
+    font-size: 0.58rem;
   }
   .view-events-btn {
     margin-top: 40px;
@@ -492,7 +493,6 @@ h3{
   }
 }
 
-/* Very small screens (360px and below) */
 @media (max-width: 360px) {
   .events-section {
     margin-top: 15px;
@@ -505,62 +505,45 @@ h3{
   .events-section h2::after {
     width: 35px;
   }
-  .events-container {
-    gap: 0.5rem;
-    padding: 0 10px;
-  }
-  .event-card {
-    width: 98%;
-  }
   .event-image {
     height: 150px;
-  }
-  .event-content {
-    padding: 12px;
-    gap: 5px;
   }
   .event-badge {
     font-size: 0.66rem;
     padding: 2px 7px;
   }
-  .event-content h3 {
-    font-size: 1.1rem;
+  .event-title {
+    font-size: 0.88rem;
   }
   .event-intro {
-    font-size: 0.84rem;
+    font-size: 0.7rem;
   }
   .event-details {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
   .event-full {
-    font-size: 0.8rem;
-  }
-  .event-section {
-    margin-top: 5px;
+    font-size: 0.65rem;
   }
   .event-section strong {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .event-section ul {
     padding-left: 8px;
-    font-size: 0.75rem;
-  }
-  .event-sponsors {
-    gap: 1px;
+    font-size: 0.65rem;
   }
   .event-sponsors span {
     padding: 2px 5px;
-    font-size: 0.66rem;
+    font-size: 0.56rem;
   }
   .view-events-btn {
     margin-top: 35px;
     padding: 0.65rem 1.2rem;
-    min-width: calc(100% - 40px); /* Full width minus margins */
+    min-width: calc(100% - 40px);
     max-width: 280px;
     height: 46px;
     font-size: 0.9rem;
   }
   .view-events-btn:hover {
-    transform: none; /* Disable for very small screens */
+    transform: none;
   }
 }

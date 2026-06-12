@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { NavLink } from "react-router-dom"
 import Collapse from "bootstrap/js/dist/collapse"
 import "../styles/navbar.css"
 
 function Navbar() {
   const [hidden, setHidden] = useState(false)
-  const [lastScroll, setLastScroll] = useState(0)
   const [dropdownOpen, setDropdownOpen] = useState(false)
-  const [navbarOpen, setNavbarOpen] = useState(false) // <-- NEW: track navbar toggler
+  const [navbarOpen, setNavbarOpen] = useState(false)
+
+  const lastScrollRef = useRef(0)
+  const navbarCollapseRef = useRef(null)
 
   // ==============================
   // Hide / Show on Scroll
@@ -18,24 +20,24 @@ function Navbar() {
 
       if (current < 80) {
         setHidden(false)
-      } else if (current > lastScroll) {
+      } else if (current > lastScrollRef.current) {
         setHidden(true)
       } else {
         setHidden(false)
       }
 
-      setLastScroll(current)
+      lastScrollRef.current = current
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScroll])
+  }, [])
 
   // ==============================
   // Close Navbar (Mobile)
   // ==============================
   const closeNavbar = () => {
-    const navbar = document.getElementById("navbarNavFloating")
+    const navbar = navbarCollapseRef.current
 
     if (navbar) {
       const bsCollapse =
@@ -43,35 +45,46 @@ function Navbar() {
       bsCollapse.hide()
     }
 
-    // Close dropdown
     setDropdownOpen(false)
-    setNavbarOpen(false) // <-- reset toggle state
+    setNavbarOpen(false)
   }
 
   // ==============================
   // Handle Toggler Click
   // ==============================
   const handleTogglerClick = () => {
-    const navbar = document.getElementById("navbarNavFloating")
+    const navbar = navbarCollapseRef.current
     if (!navbar) return
 
     const bsCollapse =
       Collapse.getInstance(navbar) || new Collapse(navbar, { toggle: false })
 
     if (navbarOpen) {
-      // Navbar is open, close it
       bsCollapse.hide()
       setNavbarOpen(false)
     } else {
-      // Navbar is closed, open it
       bsCollapse.show()
       setNavbarOpen(true)
     }
   }
 
+  // ==============================
+  // Handle Dropdown Toggle
+  // On hover-capable devices (desktop), hover handles open/close.
+  // On touch devices (mobile), click toggles.
+  // ==============================
+  const handleDropdownClick = () => {
+    if (window.matchMedia("(hover: none)").matches) {
+      setDropdownOpen(prev => !prev)
+    }
+  }
+
   return (
     <div className={`floating-navbar-wrapper ${hidden ? "nav-hidden" : ""}`}>
-      <nav className="navbar navbar-expand-lg navbar-light floating-navbar">
+      <nav
+        className="navbar navbar-expand-lg floating-navbar"
+        data-bs-theme="light"
+      >
         <div className="container-fluid px-3">
 
           {/* Logo */}
@@ -82,10 +95,10 @@ function Navbar() {
           >
             <img
               src="/images/logo.png"
-              height="36"
+              height="51"
+              width="51"
               className="me-2 rounded-circle"
               alt="AKUMS Logo"
-              loading="lazy"
             />
             <span className="navbar-text text-light">
               ASSOCIATION OF KENYATTA UNIVERSITY MEDICINE STUDENTS
@@ -99,7 +112,7 @@ function Navbar() {
             aria-controls="navbarNavFloating"
             aria-expanded={navbarOpen ? "true" : "false"}
             aria-label="Toggle navigation"
-            onClick={handleTogglerClick} // <-- NEW: toggle open/close manually
+            onClick={handleTogglerClick}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -108,6 +121,7 @@ function Navbar() {
           <div
             className="collapse navbar-collapse justify-content-end"
             id="navbarNavFloating"
+            ref={navbarCollapseRef}
           >
             <ul className="navbar-nav ms-auto">
 
@@ -127,15 +141,25 @@ function Navbar() {
                 onMouseEnter={() => setDropdownOpen(true)}
                 onMouseLeave={() => setDropdownOpen(false)}
               >
-                <span
+                <button
                   className="nav-link dropdown-toggle"
-                  role="button"
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  onClick={handleDropdownClick}
+                  aria-expanded={dropdownOpen}
+                  aria-haspopup="true"
                 >
                   MAGAZINE
-                </span>
+                </button>
 
                 <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
+                 <li>
+                    <NavLink
+                      to="/magazineissue"
+                      className="dropdown-item"
+                      onClick={closeNavbar}
+                    >
+                      ISSUES
+                    </NavLink>
+                  </li>
                   <li>
                     <NavLink
                       to="/magazineabout"
@@ -145,15 +169,7 @@ function Navbar() {
                       ABOUT
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink
-                      to="/magazineissue"
-                      className="dropdown-item"
-                      onClick={closeNavbar}
-                    >
-                      ISSUES
-                    </NavLink>
-                  </li>
+                  
                   <li>
                     <NavLink
                       to="/magazineleaders"
@@ -165,7 +181,7 @@ function Navbar() {
                   </li>
                   <li>
                     <NavLink
-                      to="magazinesubmission"
+                      to="/magazinesubmission"
                       className="dropdown-item"
                       onClick={closeNavbar}
                     >

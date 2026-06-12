@@ -9,34 +9,45 @@ background: linear-gradient(
   );
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
   background-blend-mode: overlay;
-  color: #ffffff; /* pure white */
+  color: #D9E8F5;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  /* Removed fixed height to allow dynamic sizing on small screens */
+  padding-top: 90px;
+  padding-bottom: 70px;
+}
+
+.footer-section .row {
+  --bs-gutter-x: 3rem;
+  --bs-gutter-y: 2.5rem;
+}
+
+.footer-section .col-md-4 {
+  padding-right: 1.25rem;
 }
 
 .footer-title {
-  padding-top: 0px;
+  padding-top: 70px;
   font-weight: 600;
   font-size: 1.3rem;
-  color: linear-gradient(90deg, #0F5B5B, #007bff); /* bright warm yellow */
+  color: #38BDF8;
+  margin-bottom: 1.5rem !important;
+  letter-spacing: 0.5px;
 }
 
 .footer-p {
-  color: #ffffff;
-  font-size: 0.8rem;
-  margin-bottom: 0.7rem; /* increases spacing between contact lines */
+  color: #D9E8F5;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
 }
 
 .footer-links li {
-  font-size: 0.8rem;
-  margin-bottom: 0.7rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
 }
 
 .footer-links a {
-  color: #ffffff; /* pure white */
+  color: #D9E8F5;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -55,49 +66,43 @@ background: linear-gradient(
 }
 
 .social-icons {
-  margin-top: 1rem; /* adds space above social icons */
+  margin-top: 1.5rem;
+  gap: 1.1rem !important;
 }
 
 .social-icons a {
   color: #cfd8dc;
-  font-size: 1.0rem;
-  margin-right: 0.7rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 1.15rem;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Hover effects with real brand colors */
 .social-icons a:hover {
+  color: #38BDF8;
   transform: translateY(-4px) scale(1.1);
-}
-
-.social-icons a[href*="instagram"]:hover {
-  color: #E1306C;
-}
-
-.social-icons a[href*="tiktok"]:hover {
-  color: #000;
-}
-
-.social-icons a[href*="x.com"]:hover {
-  color: #1DA1F2;
-}
-
-.social-icons a[href*="linkedin"]:hover {
-  color: #0077B5;
-}
-
-.social-icons a[href*="linktr.ee"]:hover {
-  color: #FF5A5F; /* Linktree brand color */
-}
-
-.social-icons a[href^="mailto:"]:hover {
-  color: #D44638; /* Gmail red */
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
 }
 
 
 hr {
-  margin-top: 1.0rem;
+  margin-top: 4.5rem !important;
+  margin-bottom: 1.75rem !important;
   opacity: 0.2;
+}
+
+.footer-credit {
+  color: #D9E8F5;
+}
+
+.footer-credit-link {
+  color: #E8F2FB;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-credit-link:hover {
+  color: #38BDF8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
 }
 
 /* Fade + Zoom Animation */

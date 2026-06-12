@@ -10,28 +10,12 @@ background: linear-gradient(135deg, #f5b341, #F3E5AB, #D4A14A); /* DNA-inspired 
   overflow: visible; /* Allow elements to breathe */
 }
 
-.who-we-are::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 10px,
-    rgba(255, 255, 255, 0.05) 10px,
-    rgba(255, 255, 255, 0.05) 20px
-  ); /* Subtle helix-like lines */
-  pointer-events: none;
-}
 
 /* Section Title */
 .section-titles {
   font-family: 'Bona Nova SC', serif;
   font-weight: 700;
-  font-size: clamp(1.8rem, 4vw, 3.0rem); /* Responsive below */
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Responsive below */
   color: #081F33;
   margin-top: 20px; /* Responsive below */
   margin-bottom: 2rem; /* Responsive below */
@@ -47,11 +31,11 @@ background: linear-gradient(135deg, #f5b341, #F3E5AB, #D4A14A); /* DNA-inspired 
 
 /* Lead and Paragraphs */
 .lead {
-  margin-top: 70px;
+  margin-top: 0;
   font-size: 0.95rem; /* Responsive below */
   line-height: 1.6;
   color: #081F33;
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
@@ -68,23 +52,22 @@ p {
   line-height: 1.3;
   color: #081F33;
   margin-bottom: 1.5rem; /* Responsive below */
-  text-align: center;
+  text-align: left;
 }
 
 /* Quote Styling */
 .quote {
   font-family: 'Noticia Text', serif;
-  font-size: 0.85rem; /* Responsive below */
-  color: #1F4FA3;
-  
-  border-left: 5px solid #1F4FA3; /* Responsive below */
-  padding-left: 1.5rem; /* Responsive below */
-  margin: 2.5rem 0; /* Responsive below */
+  font-size: 0.95rem;
+  color: #081F33;
+  border-left: 3px solid #1F4FA3;
+  padding: 0.4rem 0 0.4rem 1.2rem;
+  margin: 2rem 0;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 1.7;
+  text-align: left;
+  opacity: 0.85;
 }
 
 /* Image Wrapper */
@@ -118,43 +101,57 @@ p {
 
 /* CTA Button */
 .btn.fade-item {
-  font-family:"Funnel Sans", sans-serif;
-  background: #1F4FA3;
-  color: #fff;
-  width: auto;
+  font-family: "Funnel Sans", sans-serif;
+  background: #fff;
+  color: #081F33;
   font-weight: 800;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 50px;
-  padding: 0.8rem 2rem; /* Responsive below */
-  display: inline-block; /* Responsive below */
+  padding: 0.8rem 2rem;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  transition: all 0.4s ease;
-  box-shadow: 0 6px 15px rgba(15, 91, 91, 0.3);
+  font-size: 0.8rem;
   position: relative;
   overflow: hidden;
-  font-size: 0.8rem; /* Responsive below */
+  z-index: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-radius 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
 }
 
+/* Darker gradient overlay — fades in on hover (GPU-accelerated) */
 .btn.fade-item::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.btn.fade-item:hover::before {
-  left: 100%;
-}
-
-.btn.fade-item:hover {
-  transform: translateY(-5px) scale(1.05); /* Reduced scale on small screens below */
+  inset: 0;
+  border-radius: inherit;
   background: linear-gradient(90deg, #1F4FA3 0%, #081F33 100%);
-  box-shadow: 0 10px 25px rgba(15, 91, 91, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+  z-index: -1;
+}
+
+.btn.fade-item:hover,
+.btn.fade-item:focus {
+  transform: translateY(-4px) scale(1.05);
+  border-radius: 30px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.btn.fade-item:hover::before,
+.btn.fade-item:focus::before {
+  opacity: 1;
+}
+
+.btn.fade-item:active {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.20);
 }
 
 /* Fade Animations */
@@ -168,6 +165,13 @@ p {
 .fade-item.delay-3 { animation-delay: 0.5s; }
 .fade-item.delay-4 { animation-delay: 0.7s; }
 .fade-item.delay-5 { animation-delay: 0.9s; }
+.fade-item.delay-6 { animation-delay: 1.1s; }
+
+/* Org name highlight */
+.about-org-name {
+  color: #1F4FA3;
+  font-weight: 700;
+}
 
 @keyframes fadeInUp {
   from {
@@ -214,9 +218,6 @@ p {
     padding: 0.75rem 1.9rem;
     font-size: 0.95rem;
   }
-  .btn.fade-item:hover {
-    transform: translateY(-4px) scale(1.03);
-  }
 }
 
 /* Tablets (992px and below) */
@@ -252,9 +253,6 @@ p {
     padding: 0.7rem 1.8rem;
     font-size: 0.92rem;
   }
-  .btn.fade-item:hover {
-    transform: translateY(-4px) scale(1.03);
-  }
 }
 
 /* Small tablets/phones (768px and below) */
@@ -275,6 +273,7 @@ p {
   }
   .lead {
     font-size: 1.1rem;
+    text-align: center;
   }
   p {
     font-size: 1rem;
@@ -283,12 +282,10 @@ p {
   }
   .quote {
     text-align: center;
-    border-left: none;
-    border-top: 5px solid #1F4FA3;
-    padding-top: 1rem;
-    padding-left: 0;
-    font-size: 1rem;
-    margin: 1.9rem 0;
+    font-size: 0.9rem;
+    margin: 1.6rem 0;
+    border-left: 3px solid #1F4FA3;
+    padding: 0.3rem 0 0.3rem 1rem;
   }
 
   .about-img-wrapper {
@@ -299,19 +296,12 @@ p {
   }
 
   .btn.fade-item {
-    display: block;
-    margin: 2rem auto 0;
-    text-align: center;
-    width: fit-content;
     padding: 0.75rem 1.7rem;
     font-size: 0.9rem;
   }
   .about-img-wrapper {
     margin-bottom: 2rem;
     max-width: 85%;
-  }
-  .btn.fade-item:hover {
-    transform: translateY(-3px) scale(1.02);
   }
 }
 
@@ -351,9 +341,6 @@ p {
     padding: 0.7rem 1.5rem;
     font-size: 0.9rem;
   }
-  .btn.fade-item:hover {
-    transform: translateY(-2px) scale(1.01);
-  }
 }
 
 /* Very small screens (360px and below) */
@@ -387,7 +374,7 @@ p {
     font-size: 0.85rem;
   }
   .btn.fade-item:hover {
-    transform: none; /* Disable for very small screens */
+    transform: translateY(-2px) scale(1.01);
   }
   /* Animation tweak for very small screens: Slightly faster for snappier feel */
   .fade-item {

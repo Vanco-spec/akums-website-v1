@@ -1,13 +1,7 @@
-import PublicationHero from "../components/MagazineAboutHero";
 import MagazineInfo from "../components/MagazineAboutInfo";
 
 function MagazineAbout() {
-  return (
-    <>
-      <PublicationHero />
-      <MagazineInfo />
-    </>
-  );
+  return <MagazineInfo />;
 }
 
-export default MagazineAbout
+export default MagazineAbout;

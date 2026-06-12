@@ -1,7 +1,4 @@
-import "./../styles/home_about.css"; // Create a CSS file for this section
-
-// Optional: image import if stored in src/assets
-// import whoImage from "../assets/images/IMG_1283.JPG";
+import "./../styles/home_about.css";
 
 function HomeWhoWeAre() {
   return (
@@ -17,12 +14,12 @@ function HomeWhoWeAre() {
             <div className="about-img-wrapper">
               <img
                 src="/images/IMG_1283.JPG"
-                // src={whoImage} // Uncomment if you imported image from src/assets
                 alt="AKUMS Members - Future Healthcare Professionals"
                 className="img-fluid rounded-3 shadow about-img"
+                width="600"
+                height="650"
                 loading="lazy"
               />
-              {/* Optional DNA overlay */}
               <div className="dna-overlay"></div>
             </div>
           </div>
@@ -32,14 +29,13 @@ function HomeWhoWeAre() {
             <h2
               id="about-title"
               className="section-titles mb-4"
-              style={{ color: "#081F33" }}
             >
               WHO WE ARE
             </h2>
 
             <p className="lead fade-item delay-1">
               The{" "}
-              <strong style={{ color: "#1F4FA3" }}>
+              <strong className="about-org-name">
                 Association of Kenyatta University Medicine Students (AKUMS)
               </strong>{" "}
               is a student-led organization uniting future healthcare professionals with a
@@ -61,23 +57,22 @@ function HomeWhoWeAre() {
             </p>
 
             <p className="fade-item delay-4">
-              AKUMS also provides opportunities for personal and professional growth through workshops, 
-              seminars, and research initiatives. By engaging with experts, alumni, and the wider medical 
-              community, our members gain practical skills, broaden their perspectives, and prepare to become 
+              AKUMS also provides opportunities for personal and professional growth through workshops,
+              seminars, and research initiatives. By engaging with experts, alumni, and the wider medical
+              community, our members gain practical skills, broaden their perspectives, and prepare to become
               influential leaders in healthcare both locally and globally.
             </p>
 
             {/* Inspirational Quote */}
-            <blockquote className="quote fade-item delay-4">
-              <em>“Empowering future medics, transforming community health.”</em>
+            <blockquote className="quote fade-item delay-5">
+              <em>"Empowering future medics, transforming community health."</em>
             </blockquote>
 
             {/* Call to Action */}
             <a
               href="/about"
-              className="btn fade-item delay-5 mt-4"
+              className="btn fade-item delay-6 mt-4"
               aria-label="Learn more about AKUMS"
-              style={{ backgroundColor: "#1F4FA3", color: "#fff" }}
             >
               Discover Our Story
             </a>

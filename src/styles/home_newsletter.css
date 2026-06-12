@@ -1,32 +1,8 @@
 /* ================= NEWSLETTER SECTION ================= */
 
 .newsletter-section {
-  background:
-    radial-gradient(
-      circle at top,
-      #081F33 0%,
-      #081F33 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      120deg,
-      #081F33 0%,
-      #0F3A5F 0%,
-      transparent 60%
-    ),
-    linear-gradient(
-      90deg,
-      #081F33 0%,
-      #0F3A5F 60%,
-      #1F4FA3 100%
-    ),
-     radial-gradient(
-      circle at bottom,
-      #081F33 0%,
-      #081F33 0%,
-      transparent 60%
-    );
-
+  background: linear-gradient(to bottom right, #0a2a6c, #09237a, #020b3a);
+  background-attachment: fixed;
   padding: 80px 20px; /* Responsive below */
   min-height: 100vh; /* Responsive below */
   display: flex;

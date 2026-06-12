@@ -52,7 +52,7 @@ export default function Footer() {
             </p>
             <p className="small footer-p mb-3">
               <i className="bi bi-telephone-fill me-2"></i>
-              - Will be available soon
+              - Coming soon
             </p>
 
             <div className="social-icons d-flex gap-3">
@@ -78,7 +78,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              <a href="mailto:Akumssecretariat@gmail.com">
+              <a href="mailto:akumssecretariat@gmail.com">
                 <i className="bi bi-envelope-fill"></i>
               </a>
             </div>
@@ -92,9 +92,9 @@ export default function Footer() {
           <p className="footer-p mb-2 mb-md-0">
             © 2026 Association of Kenyatta University Medical Students (AKUMS). All rights reserved.
           </p>
-          <p className="mb-0">
+          <p className="mb-0 footer-credit">
             Created & designed by{" "}
-            <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://yourportfolio.com" target="_blank" rel="noopener noreferrer" className="footer-credit-link">
               AKUMS-ICT TEAM
             </a>
           </p>

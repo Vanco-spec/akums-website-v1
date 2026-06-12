@@ -6,9 +6,9 @@ const leaders2025 = [
     role: "President",
     name: "James Mvoi",
     description:
-      "Provides strategic leadership, represents AKUMS externally, and chairs executive meetings.",
-    email: "john.mwangi@ku.ac.ke",
-    linkedin: "https://linkedin.com/in/johnmwangi",
+      "Manage the affairs of the Association and ensure adherence to its Constitution. Represent the Association before the University administration and external bodies.",
+    email: "",
+    linkedin: "https://www.linkedin.com/in/james-mvoi-6a0603205/",
     featured: true,
   },
   {
@@ -24,43 +24,43 @@ const leaders2025 = [
     role: "Organizing Secretary",
     name: "Airo Emmanuel",
     description:
-      "Supports the President, oversees programs, and coordinates cross-department collaboration.",
-    email: "mary.wambui@ku.ac.ke",
-    linkedin: "https://linkedin.com/in/marywambui",
+      "Head the Sports and Entertainment Committee. Plan, coordinate, and execute both internal and outreach programs of the Association.",
+    email: "",
+    linkedin: "https://www.linkedin.com/in/airo-emmanuel-b23748291/",
     featured: true,
   },  
   {
     role: "Assistant Organizing Secretary",
     name: "Lawrence Chomba",
     description:
-      "Supports the President, oversees programs, and coordinates cross-department collaboration.",
-    email: "mary.wambui@ku.ac.ke",
-    linkedin: "https://linkedin.com/in/marywambui",
+      "Assist the Organizing Secretary in carrying out his or her duties. Head the Publicity Committee and oversee public relations matters.",
+    email: "lawchombz@gmail.com",
+    linkedin: "https://www.linkedin.com/in/lawrence-chomba-703487274/",
     featured: true,
   },
   {
     role: "Finance - Officer",
     name: "Brian Wari",
     description:
-      "Manages budgets, dues and financial reporting for AKUMS activities.",
-    email: "cynthia.njoroge@ku.ac.ke",
+      "Serve as the chief custodian of the Association’s finances. Head the Finance and Planning Committee.",
+    email: "",
     linkedin: "https://linkedin.com/in/cynthianjoroge",
   },
   {
     role: "Assistant Finance - Officer",
     name: "Sam Zeddy",
     description:
-      "Manages budgets, dues and financial reporting for AKUMS activities.",
+      "Assists the finance officer with his or her duties as stated by the constitution.",
     email: "cynthia.njoroge@ku.ac.ke",
     linkedin: "https://linkedin.com/in/cynthianjoroge",
   },
   {
     role: "ICT Manager",
-    name: "Mulili Mathaya",
+    name: "Mulili Maithya",
     description:
-      "Maintains the website, manages online tools and supports digital events.",
-    email: "ict@akums.org",
-    linkedin: "https://linkedin.com",
+      "Manage the Association’s public relations, publicity, and branding",
+    email: "",
+    linkedin: "https://www.linkedin.com/in/mulili-maithya-101424253/",
   },
   {
     role: "Assistant ICT Manager",
@@ -74,24 +74,24 @@ const leaders2025 = [
     role: "Publicity Manager",
     name: "Ivy Kamotho",
     description:
-      "Supports the President, oversees programs, and coordinates cross-department collaboration.",
-    email: "mary.wambui@ku.ac.ke",
+      "Manage the Association’s public relations, publicity, and branding. Promote the Association’s image and visibility across internal and external platforms.",
+    email: "",
     linkedin: "https://linkedin.com/in/marywambui",
     featured: true,
   },
   {
-    role: "Sports Representative",
+    role: "Sports Officer",
     name: "Lewis Moronya",
     description:
-      "Maintains the website, manages online tools and supports digital events.",
+      "Coordinate and oversee all sports and recreational activities of the Association. Organize interclass and interfaculty tournaments to strengthen unity and collaboration.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
   {
-    role: "Assistant Sports Representative",
+    role: "Assistant Sports Officer",
     name: "Grievance Kiptoo",
     description:
-      "Maintains the website, manages online tools and supports digital events.",
+      "Assists the sports officer with his or her duties as stated by the constitution.",
     email: "ict@akums.org",
     linkedin: "https://linkedin.com",
   },
@@ -99,7 +99,7 @@ const leaders2025 = [
     role: "6TH YEAR CLASS REP",
     name: "Caroline Gakinya",
     description:
-      "Supports the President, oversees programs, and coordinates cross-department collaboration.",
+      "",
     email: "mary.wambui@ku.ac.ke",
     linkedin: "https://linkedin.com/in/marywambui",
     featured: true,
@@ -136,8 +136,8 @@ const leaders2025 = [
     name: "Patrick Obat",
     description:
       "",
-    email: "mary.wambui@ku.ac.ke",
-    linkedin: "https://linkedin.com/in/marywambui",
+    email: "",
+    linkedin: "https://www.linkedin.com/in/patrick-obat-457b572b7/",
     featured: true,
   },
   {
@@ -189,7 +189,7 @@ const LeadersComponent = () => {
                 type="button"
                 onClick={() => toggleYear(2025)}
               >
-                OFFICIALS OF 2025
+                OFFICIALS OF 2024 - 2025
               </button>
             </h2>
 
@@ -253,7 +253,7 @@ const LeadersComponent = () => {
                 type="button"
                 onClick={() => toggleYear(2024)}
               >
-                OFFICIALS OF 2024
+                OFFICIALS OF 2023 - 2024
               </button>
             </h2>
 

@@ -10,7 +10,7 @@ body {
 #leaders-section {
   background: #fff; 
   color: #333;
-  padding-top: 600px; /* No large gap above section */
+  padding-top: 400px; /* No large gap above section */
   padding-bottom: 50px;
   min-height: 100vh;
 }
@@ -21,22 +21,21 @@ body {
 #leaders-section .section-title {
   font-weight: 700;
   font-size: 2rem;
-  padding-top: 45px;
-}
+  }
 
 
 
 #leaders-section .lead {
   font-weight: 400;
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  color: #4b5563;
+  color: #081F33;
 }
 
 /* ===== ACCORDION ===== */
 .accordion-button {
-  background-color: #f8f9fa;
+  background-color: #4b749d;
   color: #081f33;
   font-weight: 600;
   border-radius: 8px;
@@ -59,20 +58,48 @@ body {
 
 /* Card container */
 .leader-card {
-  background: #ffffff;
+  position: relative;
+  background: radial-gradient(
+    ellipse at center,
+    #fff4b3 0%,
+    #f7dc6f 25%,
+    #e1c45a 45%,
+    #d4af37 70%,
+    #b8962e 100%
+  );
   border-radius: 14px;
-  border: 1px solid rgba(15,91,91,0.06);
+  border: 1px solid rgba(212,175,55,0.55);
   padding: 1.25rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.32s ease, box-shadow 0.32s ease;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.7),
+    inset 0 -3px 6px rgba(0,0,0,0.08),
+    0 12px 30px rgba(0,0,0,0.15);
+}
+
+.leader-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.7) 0%,
+    rgba(255,255,255,0.15) 40%,
+    rgba(255,255,255,0) 60%
+  );
+  pointer-events: none;
 }
 
 .leader-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 14px 30px rgba(10,15,20,0.08);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    inset 0 1px 3px rgba(255,255,255,0.8),
+    0 18px 40px rgba(0,0,0,0.18);
 }
 
 /* Photo */
@@ -81,7 +108,8 @@ body {
   height: 120px;
   object-fit: cover;
   border-radius: 50%;
-  border: 3px solid #0F5B5B;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 0 3px rgba(255,215,0,0.3);
   margin-bottom: 0.6rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -92,14 +120,16 @@ body {
 
 /* Name / role / function */
 .leader-card h5, .leader-card h6 {
-  color: #0F5B5B;
+  color: #4a3b08;
+  font-weight: 700;
+
   margin-bottom: 0.25rem;
   text-align: center;
 }
 
 .leader-function {
   font-size: 0.95rem;
-  color: #4b5563;
+  color: #4a3b08;
   line-height: 1.5;
   margin-bottom: 0.6rem;
   max-width: 18rem;
@@ -113,6 +143,71 @@ body {
   margin-top: auto;
   align-items: center;
   justify-content: center;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background: transparent;
+  perspective: 1000px; /* 3D perspective */
+  width: 100%;
+  height: 100%;
+}
+
+/* Inner part that flips */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 14px;
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back sides */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.7),
+    inset 0 -3px 6px rgba(0,0,0,0.08),
+    0 12px 30px rgba(0,0,0,0.15);
+  background: radial-gradient(
+    circle at center,
+    #fff4b3 0%,
+    #f7dc6f 25%,
+    #e1c45a 45%,
+    #d4af37 70%,
+    #b8962e 100%
+  );
+}
+
+/* Back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(
+    circle at center,
+    #fff8d0 0%,
+    #f4d672 40%,
+    #d4af37 100%
+  );
+  color: #3a2a00;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 /* Email & LinkedIn buttons */
@@ -133,17 +228,17 @@ body {
 }
 
 .contact-email:hover {
-  background: linear-gradient(90deg,#0F5B5B,#0A4A4A);
+  background: linear-gradient(135deg,#ea4335,#c5221f);
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(10,15,20,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 .contact-linkedin:hover {
-  background: linear-gradient(90deg,#0A66C2,#084C8A);
+  background: linear-gradient(135deg,#0A66C2,#004182);
   color: #fff;
   transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(10,15,20,0.08);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
 }
 
 .team-vision {
@@ -202,4 +297,30 @@ body {
 .toast-body strong {
   font-weight: 600;
   color: #fff;
+}
+
+/* Featured cards taller */
+.col-12.col-md-4 .flip-card {
+  height: 320px;
+}
+
+/* Regular cards smaller */
+.col-6.col-md-4.col-lg-3 .flip-card {
+  height: 260px;
+}
+
+@media (max-width: 768px) {
+  .col-12.col-md-4 .flip-card {
+    height: 280px;
+  }
+  .col-6.col-md-4.col-lg-3 .flip-card {
+    height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .col-12.col-md-4 .flip-card,
+  .col-6.col-md-4.col-lg-3 .flip-card {
+    height: 200px;
+  }
 }

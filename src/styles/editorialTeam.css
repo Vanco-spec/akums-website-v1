@@ -1,67 +1,426 @@
-.editorial-team-section {
-    
-  background: #fef9f4;
-  padding: 6rem 2rem;
+/* ===================== EDITORIAL TEAM PAGE ===================== */
+:root {
+  --ed-navy-1: #0a2a6c;
+  --ed-navy-2: #09237a;
+  --ed-navy-3: #020b3a;
+  --ed-sky: #38BDF8;
+  --ed-gold: #d4a14a;
+  --ed-cream: #fef9f4;
+  --ed-text: #2a2a2a;
+  --ed-muted: #6b7280;
 }
 
-.section-title {
-  margin-top: 10rem;  
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #0f5b5b;
-  margin-bottom: 0.8rem;
+.editorial-page {
+  font-family: "Poppins", sans-serif;
+  color: var(--ed-text);
+  background: var(--ed-cream);
+  padding: 0;
 }
 
-.section-subtitle {
-  font-size: 1rem;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
+/* -------- SHARED -------- */
+.ed-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ed-gold);
+  margin-bottom: 1.5rem;
 }
 
-.team-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 1.5rem 1rem;
+.ed-eyebrow-dark {
+  color: var(--ed-navy-1);
+}
+
+.section-header {
   text-align: center;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.ed-h2 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ed-navy-3);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.ed-h2 em {
+  font-style: italic;
+  font-weight: 400;
+  font-family: "Noticia Text", Georgia, serif;
+  color: var(--ed-sky);
+}
+
+.ed-h2-light {
+  color: #fff;
+}
+.ed-h2-light em {
+  color: var(--ed-gold);
+}
+
+/* ===================== HERO ===================== */
+.editorial-hero {
+  background: linear-gradient(to bottom right, #0a2a6c, #09237a, #020b3a);
+  color: #fff;
+  padding: 7rem 1rem 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(56, 189, 248, 0.18), transparent 42%),
+    radial-gradient(circle at 85% 75%, rgba(212, 161, 74, 0.16), transparent 45%);
+  pointer-events: none;
+}
+
+.editorial-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+}
+
+.editorial-hero .ed-eyebrow {
+  margin-top: 4rem;
+}
+
+.ed-display {
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  gap: 0.1rem;
+}
+
+.ed-line-1 {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "Noticia Text", Georgia, serif;
+}
+
+.ed-line-2 {
+  font-size: clamp(4.5rem, 14vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff 0%, var(--ed-sky) 55%, var(--ed-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin: 0.1rem 0;
+}
+
+.ed-line-3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+  font-family: "Noticia Text", Georgia, serif;
+}
+
+.ed-hero-sub {
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 580px;
+  margin: 1.75rem 0 0;
+}
+
+/* ===================== STATS ===================== */
+.stats-band {
+  background: var(--ed-cream);
+  position: relative;
+}
+
+.stats-wrap {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  max-width: 1100px;
+  border-bottom: 1px solid rgba(10, 42, 108, 0.08);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.stat-num {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(180deg, var(--ed-navy-1), var(--ed-sky));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "Poppins", sans-serif;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ed-muted);
+}
+
+/* ===================== TEAM ===================== */
+.team-band {
+  background: linear-gradient(to bottom right, #0a2a6c, #09237a, #020b3a);
+  color: #fff;
+  padding: 6rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(56, 189, 248, 0.12), transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(212, 161, 74, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.team-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.team-group {
+  margin-top: 4rem;
+}
+.team-group:first-of-type {
+  margin-top: 3rem;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.group-num {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--ed-gold);
+  letter-spacing: -0.03em;
+}
+
+.group-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.group-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(56, 189, 248, 0.5), transparent);
+}
+
+/* -------- TEAM CARDS -------- */
+.team-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  padding: 2rem 1.25rem 1.5rem;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              background 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  cursor: default;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ed-sky), var(--ed-gold));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
 }
 
-.team-photo {
-  width: 100px;
-  height: 100px;
+.team-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Photo / initials */
+.photo-ring {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1.1rem;
   border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--ed-sky), var(--ed-gold));
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.team-card:hover .photo-ring {
+  transform: rotate(8deg) scale(1.05);
+  box-shadow: 0 0 35px rgba(56, 189, 248, 0.45);
+}
+
+.photo-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #0a2a6c 0%, #020b3a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-initials {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.02em;
+  font-family: "Poppins", sans-serif;
+}
+
+.photo-img {
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
-  margin-bottom: 1rem;
-  border: 3px solid #0d6efd;
+  border-radius: 50%;
 }
 
 .team-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #0d6efd;
-  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ed-gold);
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.005em;
+  transition: color 0.3s ease;
+}
+
+.team-card:hover .team-name {
+  color: #fff;
 }
 
 .team-role {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 auto;
+  letter-spacing: 0.04em;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .team-photo {
-    width: 90px;
-    height: 90px;
-  }
+/* ===================== ENTRY ANIMATIONS ===================== */
+.ed-fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
 
-  .section-title {
-    font-size: 2rem;
+.ed-fade.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.ed-fade-rise {
+  transform: translateY(60px) scale(0.92);
+  transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ed-fade-pop {
+  transform: translateY(40px) scale(0.96);
+  transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ed-fade.delay-1 { transition-delay: 0.05s; }
+.ed-fade.delay-2 { transition-delay: 0.18s; }
+.ed-fade.delay-3 { transition-delay: 0.32s; }
+.ed-fade.delay-4 { transition-delay: 0.46s; }
+.ed-fade.delay-5 { transition-delay: 0.6s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ed-fade,
+  .ed-fade-rise,
+  .ed-fade-pop {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
+  .team-card:hover .photo-ring {
+    transform: none;
+  }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 992px) {
+  .editorial-hero { padding: 6rem 1rem 4.5rem; }
+  .stats-wrap { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+  .team-band { padding: 5rem 1rem; }
+}
+
+@media (max-width: 768px) {
+  .editorial-hero { padding: 5rem 1rem 4rem; }
+  .editorial-hero .ed-eyebrow { margin-top: 3rem; }
+  .stats-wrap { padding-top: 3rem; padding-bottom: 3rem; }
+  .stat-label { font-size: 0.66rem; letter-spacing: 0.22em; }
+  .team-band { padding: 4rem 1rem; }
+  .group-header { gap: 0.75rem; margin-bottom: 1.5rem; }
+  .group-num { font-size: 1.2rem; }
+  .group-label { font-size: 0.78rem; letter-spacing: 0.24em; }
+  .team-card { padding: 1.5rem 1rem 1.25rem; }
+  .photo-ring { width: 140px; height: 140px; }
+  .photo-initials { font-size: 1.3rem; }
+}
+
+@media (max-width: 480px) {
+  .ed-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 1.1rem;
+  }
+  .ed-hero-sub { font-size: 0.92rem; }
+  .team-card { padding: 1.25rem 0.85rem 1rem; }
+  .photo-ring { width: 96px; height: 96px; }
+  .photo-initials { font-size: 1.15rem; }
+  .team-name { font-size: 0.92rem; }
+  .team-role { font-size: 0.72rem; }
 }
