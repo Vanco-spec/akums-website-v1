@@ -271,7 +271,7 @@ export default function IssuePage() {
               <div className="cover-frame">
                 <div className="cover-tilt">
                   <img
-                    src="/images/magazinefinal.jpg"
+                    src="/images/magazinecover.jpg"
                     alt="AKUMS Medical Magazine — Issue I cover"
                     className="cover-img"
                     loading="lazy"
