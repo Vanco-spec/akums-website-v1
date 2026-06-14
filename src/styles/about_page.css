@@ -1,0 +1,110 @@
+/* ============================================================
+   ABOUT PAGE — shared modern-blue premium design system
+   ============================================================ */
+.about-page {
+  overflow-x: clip;
+  max-width: 100%;
+  color: #0f172a;
+}
+
+/* Alternating section backgrounds for rhythm */
+.about-page .who-we-are,
+.about-page .what-we-do,
+.about-page #sponsors {
+  background: #f5f9ff;
+}
+.about-page .mission-vision,
+.about-page .akums-traditions,
+.about-page .about-navigation {
+  background: #ffffff;
+}
+
+/* Eyebrow label */
+.about-page .about-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shared section titles */
+.about-page .section-title {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+  position: relative;
+  display: inline-block;
+}
+.about-page .section-title::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 4px;
+  border-radius: 2px;
+  margin: 16px auto 0;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+}
+/* Left-aligned underline for the Who We Are column title */
+.about-page .who-we-are .section-title::after {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Lead / intro paragraphs */
+.about-page .intro-text,
+.about-page .traditions-intro {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #475569;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+/* Buttons (shine sweep + lift) */
+.about-page .btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+.about-page .btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.about-page .btn:hover::after {
+  left: 150%;
+}
+
+/* ============================================================
+   ONE-TIME ENTRANCE ANIMATION (plays once, never re-triggers)
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  .about-page .who-we-are .container,
+  .about-page .mission-vision .container,
+  .about-page .what-we-do .container,
+  .about-page .akums-traditions .container,
+  .about-page #sponsors .container {
+    animation: aboutFadeUp 0.9s ease both;
+  }
+}
+
+@keyframes aboutFadeUp {
+  from { opacity: 0; transform: translateY(38px); }
+  to { opacity: 1; transform: none; }
+}
