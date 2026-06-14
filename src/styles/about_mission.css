@@ -81,7 +81,7 @@
   z-index: 1;
 }
 .mission-vision .mv-heading {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 800;
   margin: 0;
   position: relative;
@@ -107,8 +107,8 @@
 }
 .mission-vision .flip-card-back p {
   color: #475569;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.92rem;
+  line-height: 1.75;
   margin: 0;
 }
 .mission-vision .flip-card-back ul {

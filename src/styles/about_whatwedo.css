@@ -71,7 +71,7 @@
   object-fit: cover;
 }
 .what-we-do .ui-card-title {
-  font-size: 1.18rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: #0f172a;
   margin: 0;
@@ -93,7 +93,7 @@
   pointer-events: none;
 }
 .what-we-do .ui-flip-back h3 {
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 800;
   color: #fff;
   margin-bottom: 0.85rem;

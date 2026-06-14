@@ -36,7 +36,7 @@
 
 /* Shared section titles */
 .about-page .section-title {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
   font-weight: 800;
   letter-spacing: -0.5px;
   color: #0f172a;
@@ -61,12 +61,12 @@
 /* Lead / intro paragraphs */
 .about-page .intro-text,
 .about-page .traditions-intro {
-  max-width: 760px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
   color: #475569;
-  font-size: 1.02rem;
-  line-height: 1.85;
+  font-size: 0.92rem;
+  line-height: 1.8;
 }
 
 /* Buttons (shine sweep + lift) */
