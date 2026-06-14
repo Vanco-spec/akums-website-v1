@@ -1,89 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import PageFlip from "page-flip";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import "../styles/constitution.css";
+import constitutionPdf from "../assets/pdfs/AKUMS CONSTITUTION 2026.pdf";
 
 const ConstitutionComponent = () => {
   const modalRef = useRef(null);
-  const pagesHolderRef = useRef(null);
-  const pageFlipRef = useRef(null);
-  const [pagesLoaded, setPagesLoaded] = useState(false);
+  const [showPdf, setShowPdf] = useState(false);
 
+  // Load the PDF into the viewer only while the modal is open
   useEffect(() => {
     const modalEl = modalRef.current;
-    const pagesHolder = pagesHolderRef.current;
+    if (!modalEl) return;
 
-    if (!modalEl || !pagesHolder) return;
-
-    modalEl.inert = true;
-
-    async function loadPages() {
-      if (pagesLoaded) return;
-
-      try {
-        const res = await fetch("../documents/constitution-pages.html");
-        if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
-
-        const html = await res.text();
-        pagesHolder.innerHTML = html;
-        setPagesLoaded(true);
-      } catch (error) {
-        console.error("Failed to load constitution pages:", error);
-        pagesHolder.innerHTML =
-          '<p class="text-white text-center">Error loading constitution pages.</p>';
-      }
-    }
-
-    const handleShown = async () => {
-      modalEl.inert = false;
-
-      await loadPages();
-
-      const book = pagesHolder.querySelector("#book");
-      if (!book) return;
-
-      const pages = pagesHolder.querySelectorAll(".page");
-      if (!pages.length) return;
-
-      const modalDialog = modalEl.querySelector(".modal-dialog");
-      const modalWidth = modalDialog?.clientWidth || 800;
-      const modalHeight = modalDialog?.clientHeight || 600;
-
-      const pageWidth = Math.min(450, modalWidth * 0.45);
-      const pageHeight = Math.min(600, modalHeight * 0.85);
-
-      if (!pageFlipRef.current) {
-        pageFlipRef.current = new PageFlip(book, {
-          width: pageWidth,
-          height: pageHeight,
-          size: "fixed",
-          showCover: true,
-          usePortrait: true,
-          drawShadow: true,
-          mobileScrollSupport: true,
-          flippingTime: 700,
-          minWidth: 320,
-          maxWidth: 1200,
-          minHeight: 400,
-          maxHeight: 1350,
-        });
-
-        pageFlipRef.current.loadFromHTML(pages);
-      }
-    };
-
-    const handleHidden = () => {
-      modalEl.inert = true;
-
-      if (pageFlipRef.current) {
-        pageFlipRef.current.destroy();
-        pageFlipRef.current = null;
-      }
-
-      pagesHolder.innerHTML = '<div id="book"></div>';
-      setPagesLoaded(false);
-    };
+    const handleShown = () => setShowPdf(true);
+    const handleHidden = () => setShowPdf(false);
 
     modalEl.addEventListener("shown.bs.modal", handleShown);
     modalEl.addEventListener("hidden.bs.modal", handleHidden);
@@ -92,7 +23,7 @@ const ConstitutionComponent = () => {
       modalEl.removeEventListener("shown.bs.modal", handleShown);
       modalEl.removeEventListener("hidden.bs.modal", handleHidden);
     };
-  }, [pagesLoaded]);
+  }, []);
 
   return (
     <>
@@ -113,7 +44,7 @@ const ConstitutionComponent = () => {
             <div className="col-md-5 text-center mb-4 mb-md-0">
               <figure className="gazette-figure mx-auto shadow-sm p-2 rounded-4">
                 <img
-                  src="/images/placeholder.png"
+                  src="/images/logo.png"
                   alt="AKUMS Constitution"
                   className="img-fluid gazette-image rounded-3"
                 />
@@ -149,8 +80,8 @@ const ConstitutionComponent = () => {
                   </button>
 
                   <a
-                    href="/documents/AKUMS CONSTITUTION FINAL DRAFT.pdf"
-                    download
+                    href={constitutionPdf}
+                    download="AKUMS CONSTITUTION 2026.pdf"
                     className="btn-outline-gold text-center"
                   >
                     Download
@@ -162,7 +93,7 @@ const ConstitutionComponent = () => {
         </div>
       </section>
 
-      {/* ===== MODAL ===== */}
+      {/* ===== MODAL (Chrome PDF viewer) ===== */}
       <div
         className="modal fade"
         id="constitutionModal"
@@ -183,12 +114,14 @@ const ConstitutionComponent = () => {
               ></button>
             </div>
 
-            <div className="modal-body">
-              <div className="book-stage">
-                <div ref={pagesHolderRef}>
-                  <div id="book"></div>
-                </div>
-              </div>
+            <div className="modal-body p-0">
+              {showPdf && (
+                <iframe
+                  src={constitutionPdf}
+                  title="AKUMS Constitution"
+                  className="constitution-pdf-frame"
+                />
+              )}
             </div>
           </div>
         </div>

@@ -224,6 +224,24 @@
   cursor: pointer;
 }
 
+/* ===== PDF VIEWER (Chrome native) ===== */
+#constitutionModal .modal-content {
+  height: 100%;
+}
+#constitutionModal .modal-body {
+  padding: 0;
+  display: flex;
+  background-image: none;
+  background: #525659; /* Chrome PDF viewer backdrop */
+}
+.constitution-pdf-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  min-height: 80vh;
+  border: 0;
+}
+
 /* Responsive adjustments for book viewing */
 @media (max-width: 768px) {
   .book-stage {
