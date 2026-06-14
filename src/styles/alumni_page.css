@@ -1,3 +1,9 @@
+/* Prevent any decorative element from causing horizontal scroll on mobile */
+.alumni-page {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 /* Shared alumni page design for premium sections */
 .premium-section {
   padding: 6rem 0;

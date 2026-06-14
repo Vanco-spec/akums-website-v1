@@ -6,6 +6,7 @@
   color: #0f172a;
   position: relative;
   overflow: visible;
+  overflow-x: clip;
   padding-top: 6rem;
 }
 

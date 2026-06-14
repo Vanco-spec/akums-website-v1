@@ -4,6 +4,7 @@
   background: linear-gradient(180deg, #ffffff 0%, #f3f8ff 100%);
   padding: 6rem 0;
   overflow: visible;
+  overflow-x: clip;
   z-index: 1;
   margin-bottom: 50px;
 }
