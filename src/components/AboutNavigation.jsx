@@ -20,10 +20,11 @@ const AboutNavigation = () => {
           </div>
 
           <div className="col-6 col-md-3">
-            <Link to="/leaders" className="nav-card">
+            <div className="nav-card coming-soon">
               <i className="bi bi-people"></i>
               <h5>LEADERS</h5>
-            </Link>
+              <span className="coming-text">Coming Soon</span>
+            </div>
           </div>
 
           <div className="col-6 col-md-3">
