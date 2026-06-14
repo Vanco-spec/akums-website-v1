@@ -25,7 +25,7 @@ function AlumniRecruit() {
       className="alumni-recruit"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
 
@@ -41,16 +41,7 @@ function AlumniRecruit() {
             of medical professionals.
           </motion.p>
 
-          <motion.a
-            href="#apply"
-            className="btn btn-primary btn-lg rounded-pill recruit-main-btn"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <i className="bi bi-person-check-fill me-2"></i>
-            Join as Active Alumni
-          </motion.a>
-        </div>
+          </div>
       </motion.div>
 
       {/* ===== WHY SECTION ===== */}

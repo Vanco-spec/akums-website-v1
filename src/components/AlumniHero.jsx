@@ -5,55 +5,82 @@ import "../styles/alumni_hero.css";
 function AlumniHero() {
   return (
     <motion.section
-      className="alumni-hero position-relative overflow-hidden text-white"
+      className="alumni-hero position-relative overflow-hidden text-white hero-fullscreen"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.9, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.25 }}
     >
-      
-      {/* Background pattern */}
       <div className="alumni-pattern"></div>
+      <div className="hero-orb hero-orb-1" aria-hidden></div>
+      <div className="hero-orb hero-orb-2" aria-hidden></div>
+      <div className="hero-orb hero-orb-3" aria-hidden></div>
 
       <div className="container alumni-content text-center">
 
-        {/* Icon Animation */}
         <motion.div
-          className="alumni-icon mb-4"
-          initial={{ scale: 0.8, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: false }}
+          className="hero-badge mb-4"
+          initial={{ opacity: 0, y: -12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <i className="bi bi-mortarboard-fill"></i>
+          <span className="hero-badge-dot" aria-hidden></span>
+          Alumni Network · Launching Soon
         </motion.div>
 
-        {/* Title */}
+        <motion.div
+          className="alumni-icon mb-3"
+          initial={{ scale: 0.8, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          viewport={{ once: true }}
+        >
+          <i className="bi bi-globe2"></i>
+        </motion.div>
+
         <motion.h1
-          className="mb-3 text-blue-900"
+          className="mb-3 hero-title"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.9, delay: 0.25 }}
+          viewport={{ once: true }}
         >
-          Welcome to AKUMS Alumni Network
+          AKUMS Alumni — A Global Network of Medical Leaders
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
-          className="alumni-subtitle mb-4 mx-auto text-blue-200"
+          className="alumni-subtitle mb-4 mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.9, delay: 0.45 }}
+          viewport={{ once: true }}
         >
-          Connect, engage, and grow with fellow alumni.
-          Building lasting relationships and creating opportunities together.
+          Join a lifelong community of physicians, researchers, and leaders
+          driving medical excellence across the globe.
         </motion.p>
+
+        <motion.div
+          className="hero-ctas d-flex justify-content-center gap-3 mb-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <a href="#apply" className="btn btn-primary btn-lg rounded-pill hero-cta-primary">
+            Become a Member
+          </a>
+          <a href="#coming" className="btn btn-outline-light btn-lg rounded-pill hero-cta-secondary">
+            See What's Coming
+          </a>
+        </motion.div>
+
+        <div className="scroll-indicator mt-5" aria-hidden>
+          <span></span>
+        </div>
 
       </div>
 
-      {/* Wave Divider */}
       <div className="alumni-wave">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
           <path

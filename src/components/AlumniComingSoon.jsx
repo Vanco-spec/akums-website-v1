@@ -51,11 +51,12 @@ const cardVariants = {
 function AlumniComingSoon() {
   return (
     <motion.section
+      id="coming"
       className="coming-soon-section py-5 text-center"
       aria-labelledby="coming-title"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       <div className="container">
@@ -104,20 +105,6 @@ function AlumniComingSoon() {
 
                 <h5>{item.title}</h5>
                 <p>{item.description}</p>
-
-                <div className="progress-bar">
-                  <motion.div
-                    className="progress-fill"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${item.progress}%` }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    viewport={{ once: false }}
-                  ></motion.div>
-                </div>
-
-                <small className="progress-text">
-                  {item.progress}% Complete
-                </small>
               </div>
             </motion.div>
           ))}

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/home_hero.css";
 
 function HomeHero() {
@@ -18,9 +19,9 @@ function HomeHero() {
           leadership, and professional growth.
         </p>
 
-        <a href="#about-us" className="btn hero-cta">
+        <Link to="/about" className="btn hero-cta">
           Learn More
-        </a>
+        </Link>
       </div>
     </section>
   )

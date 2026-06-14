@@ -37,8 +37,8 @@ const HomeNewsletter = () => {
               <span className="sample-tag">EVENTS</span>
               <h5>Upcoming Medical Camps</h5>
               <p>
-                Join our outreach team this November as we serve underserved
-                communities through free screenings and health education.
+                Join our outreach team this Year as we serve underserved
+                communities through free medical camps.
               </p>
             </div>
           </div>
@@ -48,8 +48,7 @@ const HomeNewsletter = () => {
               <span className="sample-tag">SOCIAL</span>
               <h5>Students Social Events</h5>
               <p>
-                Meet up with KU student doctors presenting innovative research at the Annual
-                Medical Symposium and beyond.
+                Meet up with KU student doctors presenting innovative research.
               </p>
             </div>
           </div>
@@ -60,7 +59,7 @@ const HomeNewsletter = () => {
               <h5>Mentorship & Leadership</h5>
               <p>
                 New mentorship openings with clinicians, alumni, and healthcare
-                leaders — apply early.
+                leaders.
               </p>
             </div>
           </div>

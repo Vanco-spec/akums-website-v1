@@ -262,7 +262,7 @@ export default function IssuePage() {
                 </li>
               </ul>
               <div className="preview-actions iss-fade delay-7">
-                <a href="/magazine/read" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Read Magazine</a>
+                <a href="https://heyzine.com/flip-book/bcb133a912.html#page/19" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Read Magazine</a>
                 <a href={currentMagazine.pdf} download className="btn btn-outline-secondary">Download PDF</a>
               </div>
             </div>

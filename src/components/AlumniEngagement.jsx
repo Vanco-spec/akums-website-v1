@@ -25,7 +25,7 @@ function AlumniEngagement() {
       className="alumni-engagement position-relative py-5"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
       {/* Background wave */}
@@ -52,7 +52,7 @@ function AlumniEngagement() {
   variants={fadeUp}
 >
   <motion.a
-    href="/alumni-participate"
+    href="#apply"
     className="btn btn-primary btn-lg px-4 py-2 rounded-pill shadow-sm engagement-main-btn"
     whileHover={{ scale: 1.08, y: -3 }} 
     whileTap={{ scale: 0.95 }}
