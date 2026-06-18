@@ -4,7 +4,6 @@ function MagazineIssue() {
   return (
     <>
       <IssuePage />
-      
     </>
   );
 }

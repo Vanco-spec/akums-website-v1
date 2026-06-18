@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "../styles/magazine_issues.css";
-import magazinePdf from "../assets/pdfs/AKUMS MAGAZINE ISSUE 1.pdf";
+import magazinePdf from "../assets/pdfs/AKUMS MAGAZINE ISSUE 1 v2.pdf";
 
 const magazines = [
   {
@@ -262,7 +262,7 @@ export default function IssuePage() {
                 </li>
               </ul>
               <div className="preview-actions iss-fade delay-7">
-                <a href="https://heyzine.com/flip-book/bcb133a912.html#page/19" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Read Magazine</a>
+                <a href={currentMagazine.pdf} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Read Magazine</a>
                 <a href={currentMagazine.pdf} download className="btn btn-outline-secondary">Download PDF</a>
               </div>
             </div>
@@ -283,6 +283,56 @@ export default function IssuePage() {
                 <strong>Issue I</strong>
                 <p>72 pages of stories, reflections, and medical culture.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ============ ORDER PHYSICAL COPY ============ */}
+      <div className="order-band">
+        <div className="container order-wrap">
+          <div className="order-card iss-fade delay-1">
+            <div className="order-copy">
+              <span className="iss-eyebrow order-eyebrow">Now in print</span>
+              <h2 className="order-title">
+                Own the <em>physical copy</em>
+              </h2>
+              <p className="order-text">
+                Love the read? Bring AKUMS Magazine off the screen and onto your shelf.
+                Order a premium printed edition of Volume 1 Issue 1 — crisp pages,
+                rich photography, and a keepsake worth holding.
+              </p>
+              <ul className="order-points">
+                <li>Premium full-colour print</li>
+                <li>72 collectible pages</li>
+                <li>Delivered to you</li>
+              </ul>
+              <div className="order-price">
+                <span className="order-price-tag">
+                  <span className="order-price-currency">Ksh.</span>
+                  <span className="order-price-amount">1,000</span>
+                </span>
+                <span className="order-price-unit">per copy</span>
+              </div>
+              <div className="order-actions">
+                <a
+                  href="https://docs.google.com/forms/d/1Prm2_nJ2fjvb4t9s-Gn2IDn0VQvFatltHtTk9hRvkHo/viewform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn order-btn"
+                >
+                  Order Your Copy
+                </a>
+                <span className="order-hint">Opens an order form in a new tab</span>
+              </div>
+            </div>
+            <div className="order-visual" aria-hidden="true">
+              <img
+                src="/images/magazinecover.jpg"
+                alt=""
+                className="order-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
